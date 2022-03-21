@@ -31,7 +31,10 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.scss"
+              "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
+              "src/styles.scss",
+              "src/app/frontend/frontend.scss",
+              "src/app/admin/admin.scss"
             ],
             "scripts": []
           },
@@ -99,7 +102,10 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.scss"
+              "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
+              "src/styles.scss",
+              "src/app/frontend/frontend.scss",
+              "src/app/admin/admin.scss"
             ],
             "scripts": []
           }

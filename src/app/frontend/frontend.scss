@@ -1,0 +1,16 @@
+$text-color: #502F4C;
+
+.dropdown-menu{
+    border: 2px solid $text-color !important;
+}
+h1,h2,h3,h4,h5,h6,ul,li,label,p,a{
+    color: $text-color !important
+}
+button.frontend{
+    color: $text-color !important;
+    border: 2px solid $text-color !important;
+}
+button.frontend:hover{
+    background-color: $text-color;
+    color: white !important;
+}

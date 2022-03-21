@@ -1,0 +1,19 @@
+h1{
+    font-weight: 600 ;
+}
+.overlay {
+    background: rgba(255, 255, 255, 0.3);
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+  }
+  a{
+    font-weight: 600;
+}
+@media (max-width:500px) {
+  div.card{
+    border: none;
+  }
+}

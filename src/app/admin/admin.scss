@@ -1,0 +1,32 @@
+$text-color: #902F4C;
+
+mat-drawer {
+  background-color: $text-color !important;
+}
+
+button.admin{
+border: 2px solid $text-color;
+background-color: transparent
+}
+button.admin:hover{
+   background-color: $text-color !important;
+   color: white !important;
+ }
+ div.carddeco::before,div.carddeco::after{
+  background-color: rgba($color: $text-color, $alpha: 0.82);
+ }
+ input.admin{
+  border: 2.75px solid $text-color !important;
+  color: $text-color !important;
+}
+// h1,h2,h3,h4,h5,h6,ul,li,label,p,a{
+//   color: unset !important
+// }
+// button{
+//   color: $text-color !important;
+//   border: 2px solid $text-color !important;
+// }
+// button:hover{
+//   background-color: $text-color;
+//   color: white !important;
+// }

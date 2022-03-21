@@ -1,0 +1,28 @@
+<div *ngIf="inputType === 'input'">
+    <div class="my-2">
+        <label>{{label}}</label>
+    </div>
+    <div>
+        <input type="{{type}}" class="form-control"
+        [value]='value' 
+        (input)= 'onChange($any($event.target).value)'
+        (blur)='onTouched()'
+        required 
+        >
+    </div>
+</div>
+
+<div *ngIf="inputType === 'select'">
+    <div>
+        <label>{{label}}</label>
+    </div>
+    <select class="form-control">
+        <option value="" *ngFor="let item of selectlist"
+        [value]='value' 
+        (input)= 'onChange($any($event.target).value)'
+        (blur)='onTouched()'
+        >{{item}}
+    </option>
+    </select>
+</div>
+

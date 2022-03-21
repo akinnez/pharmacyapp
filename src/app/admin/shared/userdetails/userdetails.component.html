@@ -1,0 +1,29 @@
+<div class="card mt-3">
+    <div class="container">
+       
+            <div class="d-flex justify-content-between align-items-center">
+                <h4>{{id}}. {{name | uppercase}}</h4>
+                <a (click)="checkUser()" class="fw-bold" style="cursor: pointer;">{{show== false? "View Details" : "Hide Details"}}</a>
+            </div>
+            
+      <div class="d-flex fw-bold" *ngIf="show">
+          <form action="">
+            <div class="mt-2">
+                <span> Email: {{email}}</span>
+            </div>
+            <div class="mt-2">
+                <span>Age: {{age}} years</span>
+            </div>
+            <div class=" mt-2">
+                <span>Username: {{username}}</span>
+            </div>
+            <div class="my-3">
+                <div class="d-flex">
+                    <app-button buttonSection="admin" text="Edit"></app-button>
+                    <app-button buttonSection="admin" text="Delete" mclass="ms-4"></app-button>
+                </div>
+            </div>
+          </form>
+      </div>
+    </div>
+    </div>

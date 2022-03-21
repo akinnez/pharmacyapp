@@ -1,0 +1,12 @@
+{
+    "pharmacy":[],
+    "supermarket":[],
+    "users":[],
+    "admins":[
+        {
+        "username":"fattyacid",
+        "email":"fatimatolaojo@gmail.com",
+        "password":"fatimatolaojo45"
+    }
+]
+}

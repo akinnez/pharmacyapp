@@ -1,0 +1,25 @@
+<div class="container d-flex justify-content-center align-items-center" style="height: 100vh;">
+    <div class="card" style="height: 450px;">       
+        <!-- <mat-progress-bar mode="indeterminate" class="{{ progressbar }}"></mat-progress-bar> -->
+        <div class="container">
+             <form action="" [formGroup]="form" (submit)="navigate()">
+                 <div>
+                     <div class="text-center mt-4">
+                         <h1>LOGIN</h1>
+                         <h6 class="my-3">Please enter your username and password</h6>
+                     </div>
+                     <div class="form-group mt-4" *ngFor="let item of formList">
+                             <app-input inputType='input' label='{{item.label}}' formControlName='{{item.form}}' type='{{item.type}}'></app-input>
+                       </div>
+                       <div class="my-4" *ngIf="!form?.invalid">
+                        <app-button buttonSection="admin" text='Login' mclass="text-center"></app-button>
+                    </div>
+                 </div>
+             </form>
+             
+         </div>
+         <div [ngClass]="{'overlay': cond}">     
+
+    </div>
+</div>
+

@@ -1,0 +1,23 @@
+<div class="card w-100 m-0 p-0" *ngIf="condition">
+    <table class="table table-responsive w-100 m-0 p-0 text-center" >
+        <thead>
+            <th>Username</th>
+            <th>Name</th>
+            <th>Activity</th>
+            <th>Duration</th>
+            <th>Last Seen</th>
+        </thead>
+        <tbody>
+            <tr *ngFor="let activity of activityList" >
+                <td>{{activity.username}}</td>
+                <td>{{activity.name}}</td>
+                <td>{{activity.activity}}</td>
+                <td>{{activity.duration}}</td>
+                <td>{{activity.lastSeen}} ago</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<div *ngIf="cond">
+    <h1>No User Found</h1>
+</div>
