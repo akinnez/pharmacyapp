@@ -11,10 +11,11 @@ export class SidebarComponent implements OnInit {
   sidelist:any[] = [
     {icon:'home',text:'Dashboard',link:''},
     {icon:'account_circle',text:'Users',link:'users'},
-    {icon:'',text:'Pharmacy',link:'pharmacy'},
-    {icon:'',text:'Supermarket',link:'supermarket'},
-    {icon:'',text:'Help',link:'help'},
+    {icon:'local_hospital',text:'Pharmacy',link:'pharmacy'},
+    {icon:'shopping_cart',text:'Supermarket',link:'supermarket'},
+    {icon:'help',text:'Help',link:'help'},
   ]
+  
   constructor() {}
 
   ngOnInit(): void {}

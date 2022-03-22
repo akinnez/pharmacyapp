@@ -10,7 +10,8 @@ import { ActivityService } from '../../services/activityService/activity.service
 
 export class UserComponent implements OnInit {
   user:any
-  show = false
+  cond:boolean = false
+  condition:boolean = true
 
   constructor(public fb:FormBuilder, public users:ActivityService) { }
 
@@ -20,9 +21,15 @@ export class UserComponent implements OnInit {
 
   ngOnInit(): void {
     this.user = this.users.user
-    if (this.user !=[]) {this.show = true} else {this.show = false}
+    this.checkActivities()
   }
 
+  checkActivities(){
+    if(this.user.length == 0){
+      this.cond = true; 
+      this.condition = false
+  }
+}
   navigate(){
    
   }

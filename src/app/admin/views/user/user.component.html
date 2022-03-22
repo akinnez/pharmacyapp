@@ -1,11 +1,8 @@
-<!-- <app-userdetails name="olaiya kabir" email='oyetunjiidris@gmail.com' age='12' username='akinnez' id="one" ></app-userdetails> -->
 
 <div class="container-fluid m-0 p-0 w-100">
     <div class="mt-5 row w-100 align-items-center">
-        <div class="col-md-4 mt-3">
-            <app-button buttonSection="admin" text="Filter"></app-button>
-        </div>
-        <div class="col-md-4 mt-3">
+        <div class="col-md-3 mt-3"></div>
+        <div class="col-md-5 mt-3">
             <form action="" [formGroup]="formdata" class="d-flex">
                 <input type="text" class="admin form-control" placeholder="Search User" formControlName="search">
                 <app-button buttonSection="admin" text='Search'></app-button>
@@ -15,7 +12,10 @@
             <app-button buttonSection="admin" text="Add User"></app-button>
         </div>
     </div>
-    <div class="my-5" *ngIf="show">
+    <div class="container mt-5">
+        <h2>List of User(s)</h2>
+    </div>
+    <div class="mb-5" *ngIf="condition">
         <div *ngFor="let item of user,let i=index">
             <app-userdetails
                 name="{{item.name}}"
@@ -26,7 +26,7 @@
             ></app-userdetails>
         </div>
     </div>
-    <div class="my-5" *ngIf="show==false">
+    <div class="container my-5" *ngIf="cond">
         <div>
             <h2>No User Found</h2>
         </div>

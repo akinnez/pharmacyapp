@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 
 import { PharmacyRoutingModule } from './pharmacy-routing.module';
 import { PharmacyComponent } from './pharmacy.component';
+import { PharmacylistModule } from '../../shared/pharmacylist/pharmacylist.module';
 
 
 @NgModule({
@@ -11,6 +12,7 @@ import { PharmacyComponent } from './pharmacy.component';
   ],
   imports: [
     CommonModule,
+    PharmacylistModule,
     PharmacyRoutingModule
   ]
 })
