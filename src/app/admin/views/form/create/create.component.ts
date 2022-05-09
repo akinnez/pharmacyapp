@@ -30,6 +30,10 @@ export class CreateComponent implements OnInit {
   ngOnInit(): void {
   }
   navigate(){
-
+    if (this.form.invalid) {
+      return
+    }
+    console.log(this.form.value);
+    
   }
 }

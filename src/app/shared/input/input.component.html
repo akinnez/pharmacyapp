@@ -1,9 +1,9 @@
 <div *ngIf="inputType === 'input'">
     <div class="my-2">
-        <label>{{label}}</label>
+        <label class="{{mclass}}">{{label}}</label>
     </div>
     <div>
-        <input type="{{type}}" class="form-control"
+        <input type="{{type}}" class="{{mclass}} form-control"
         [value]='value' 
         (input)= 'onChange($any($event.target).value)'
         (blur)='onTouched()'

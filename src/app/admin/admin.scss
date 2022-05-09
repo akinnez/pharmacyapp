@@ -1,5 +1,7 @@
 $text-color: #902F4C;
 
+
+
 mat-drawer {
   background-color: $text-color !important;
 }
@@ -18,5 +20,8 @@ button.admin:hover{
  }
  input.admin{
   border: 2.75px solid $text-color !important;
+  color: $text-color !important;
+}
+label.admin,h1.admin,h6.admin,span.admin{
   color: $text-color !important;
 }

@@ -21,6 +21,13 @@ export class SigninComponent implements OnInit {
   ngOnInit(): void {
   }
 navigate(){
+
+  if(this.form.invalid){
+    return
+  }
   this.cond =true
+  console.log(this.form.value);
+  
+  
 }
 }

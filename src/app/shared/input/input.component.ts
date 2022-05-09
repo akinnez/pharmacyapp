@@ -21,6 +21,7 @@ export class InputComponent implements OnInit,ControlValueAccessor {
  @Input() inputType:string = '';
  @Input() label:string = '';
  @Input() type:string = '';
+ @Input() mclass:string = '';
  @Input() selectlist = [];
 
 
