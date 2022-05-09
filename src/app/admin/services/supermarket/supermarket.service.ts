@@ -4,8 +4,8 @@ import { IProductlist } from '../../interface/admin.interface';
 @Injectable({
   providedIn: 'root'
 })
-export class PharmacyServiceService {
-medlist:IProductlist[] = [
+export class SupermarketService {
+superlist:IProductlist[] = [
   {
     src:'../../../../assets/images/admin/pineapple_PNG2750.png',
     name: '',

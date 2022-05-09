@@ -7,12 +7,16 @@ import { CreateComponent } from './create/create.component';
 import { ButtonModule } from 'src/app/shared/button/button.module';
 import { InputModule } from 'src/app/shared/input/input.module';
 import { FormsModule,ReactiveFormsModule } from '@angular/forms';
+// import { AddGoodsComponent } from './add-goods/add-goods.component';
+// import { AddDrugsFormComponent } from './add-drugs-form/add-drugs-form.component';
 
 
 @NgModule({
   declarations: [
     SigninComponent,
-    CreateComponent
+    CreateComponent,
+    // AddGoodsComponent,
+    // AddDrugsFormComponent
   ],
   imports: [
     CommonModule,

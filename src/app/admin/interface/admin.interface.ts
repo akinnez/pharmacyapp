@@ -21,3 +21,13 @@ export interface IUser{
     age:number,
     email:string
 }
+export interface IProductlist {
+  src: string,
+  name: string,
+  companyName:string,
+  itemCode:number,
+  qtty: number,
+  price: number,
+  mfd:string,
+  exp:string
+}

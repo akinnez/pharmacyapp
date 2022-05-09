@@ -17,8 +17,6 @@ export class ButtonComponent implements OnInit {
   }
   event(){
     this.mclick.emit()
-
-    
   }
 
 }
