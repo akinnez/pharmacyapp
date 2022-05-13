@@ -9,10 +9,10 @@
             </form>
         </div>
         <div class="col-md-4 mt-3 text-end">
-            <app-button buttonSection="admin" text="Add User"></app-button>
+            <app-button buttonSection="admin" text="Add User" (mclick)="openDialog()"></app-button>
         </div>
     </div>
-    <div class="container mt-5">
+    <div class="container-fluid mt-5">
         <h2>List of User(s)</h2>
     </div>
     <div class="mb-5" *ngIf="condition">
@@ -26,7 +26,7 @@
             ></app-userdetails>
         </div>
     </div>
-    <div class="container my-5" *ngIf="cond">
+    <div class="container-fluid my-5" *ngIf="cond">
         <div>
             <h2>No User Found</h2>
         </div>

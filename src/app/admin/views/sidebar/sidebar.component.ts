@@ -9,11 +9,11 @@ export class SidebarComponent implements OnInit {
   @Output() toggleSideBarForMe:EventEmitter<any> = new EventEmitter
 
   sidelist:any[] = [
-    {icon:'home',text:'Dashboard',link:''},
-    {icon:'account_circle',text:'Users',link:'users'},
-    {icon:'local_hospital',text:'Pharmacy',link:'pharmacy'},
-    {icon:'shopping_cart',text:'Supermarket',link:'supermarket'},
-    {icon:'help',text:'Help',link:'help'},
+    {icon:'home',text:'Dashboard',link:'dashboard'},
+    {icon:'account_circle',text:'Users',link:'dashboard/users'},
+    {icon:'local_hospital',text:'Pharmacy',link:'dashboard/pharmacy'},
+    {icon:'shopping_cart',text:'Supermarket',link:'dashboard/supermarket'},
+    {icon:'help',text:'Help',link:'dashboard/help'},
   ]
   
   constructor() {}

@@ -1,6 +1,6 @@
 <div class="container d-flex justify-content-center align-items-center" style="height: 100vh;">
-    <div class="card" style="height: 450px;">       
-        <!-- <mat-progress-bar mode="indeterminate" class="{{ progressbar }}"></mat-progress-bar> -->
+    <div class="card">       
+        <mat-progress-bar mode="indeterminate" class="{{ progressbar }}"></mat-progress-bar>
         <div class="container">
              <form action="" [formGroup]="form" (submit)="navigate()">
                  <div>
@@ -14,7 +14,7 @@
                        <div class="my-3 text-end">
                         <a routerLink="/form/forget-password">Forget Password</a>
                   </div>
-                       <div class="my-4" *ngIf="!form?.invalid">
+                       <div class="my-4">
                            <app-button buttonSection="frontend" text='Login' mclass="text-center"></app-button>
                        </div>
                  </div>

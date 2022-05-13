@@ -6,8 +6,8 @@ import { PharmacylistModule } from '../../shared/pharmacylist/pharmacylist.modul
 import { ReactiveFormsModule } from '@angular/forms';
 import { ButtonModule } from 'src/app/shared/button/button.module';
 import { MatDialogModule } from '@angular/material/dialog';
-import { AddDrugsModule } from '../../shared/add-drugs/add-drugs.module';
 import { EditPharmacyModule } from '../../shared/edit-pharmacy/edit-pharmacy.module';
+import { AddDrugsModule } from '../../shared/add-drugs/add-drugs.module';
 
 
 @NgModule({

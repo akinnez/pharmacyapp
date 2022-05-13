@@ -25,9 +25,9 @@ navigate(){
   if(this.form.invalid){
     return
   }
-  this.cond =true
+  this.cond =true,
+  this.progressbar = 'd-block'
   console.log(this.form.value);
-  
-  
+ 
 }
 }

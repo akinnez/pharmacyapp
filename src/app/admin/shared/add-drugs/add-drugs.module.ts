@@ -10,7 +10,6 @@ import { ReactiveFormsModule } from '@angular/forms';
   declarations: [AddDrugsFormComponent,AddDrugsComponent],
   imports: [
     CommonModule,
-    ReactiveFormsModule,
     ReactiveFormsModule
   ]
 })

@@ -7,6 +7,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ButtonModule } from 'src/app/shared/button/button.module';
 import { InputModule } from 'src/app/shared/input/input.module';
 import { ForgetpasswordComponent } from './forgetpassword/forgetpassword.component';
+import {MatProgressBarModule} from '@angular/material/progress-bar'
 
 
 @NgModule({
@@ -20,7 +21,8 @@ import { ForgetpasswordComponent } from './forgetpassword/forgetpassword.compone
     FormsModule,
     ReactiveFormsModule,
     ButtonModule,
-    InputModule
+    InputModule,
+    MatProgressBarModule
   ],
   exports:[SigninComponent]
 })

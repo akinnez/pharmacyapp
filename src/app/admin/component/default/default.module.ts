@@ -5,7 +5,7 @@ import { DefaultRoutingModule } from './default-routing.module';
 import { DefaultComponent } from './default.component';
 import { SidebarModule } from '../../views/sidebar/sidebar.module';
 import { HeaderModule } from '../../views/header/header.module';
-import { DashboardModule } from '../../views/dashboard/dashboard.module';
+
 
 @NgModule({
   declarations: [
@@ -16,7 +16,7 @@ import { DashboardModule } from '../../views/dashboard/dashboard.module';
     DefaultRoutingModule,
     MatSidenavModule,
     SidebarModule,
-    HeaderModule
+    HeaderModule,
   ]
 })
 export class DefaultModule { }

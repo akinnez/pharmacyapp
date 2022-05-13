@@ -22,6 +22,10 @@ export class SigninComponent implements OnInit {
     
   }
 navigate(){
+  if(this.form.invalid){
+    return
+  }
   this.cond = true
+  this.progressbar = 'd-block'
 }
 }

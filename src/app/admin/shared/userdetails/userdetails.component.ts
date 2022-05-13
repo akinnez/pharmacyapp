@@ -14,7 +14,9 @@ export class UserdetailsComponent implements OnInit {
  show:boolean = false;
  info:string='';
 
- userInfo = [{}]
+ userInfo = [
+   {}
+  ]
 
 
   constructor() { }

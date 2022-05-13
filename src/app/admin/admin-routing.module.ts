@@ -14,12 +14,12 @@ const routes: Routes = [
       //   component:LayoutComponent,
       // },
       {
-        path:'',
-        loadChildren:()=> import('./component/default/default.module').then(m=>m.DefaultModule)
+        path:"",
+        loadChildren:()=> import('./views/form/form.module').then(m=>m.FormModule)
       },
       {
-        path:"form",
-        loadChildren:()=> import('./views/form/form.module').then(m=>m.FormModule)
+        path:'dashboard',
+        loadChildren:()=> import('./component/default/default.module').then(m=>m.DefaultModule)
       }
     ]
   }

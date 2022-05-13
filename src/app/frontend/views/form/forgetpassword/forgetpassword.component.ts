@@ -8,16 +8,19 @@ import { EmailValidator, FormBuilder, FormGroup, Validators } from '@angular/for
 })
 export class ForgetpasswordComponent implements OnInit {
 cond:boolean = false
-
+progressbar:string = 'd-none'
   constructor(private fb:FormBuilder) { }
+  
   form:FormGroup = this.fb.group({
     email:['',[Validators.email,Validators.required]]
   })
   ngOnInit(): void {
   }
 navigate(){
-  console.log(this.form.invalid);
-  
+  if(this.form.invalid){
+    return
+  }
+  this.progressbar = 'd-block'
   this.cond = true;
 }
 }

@@ -6,6 +6,9 @@ import { UserComponent } from './user.component';
 import { UserdetailsModule } from '../../shared/userdetails/userdetails.module';
 import { ButtonModule } from 'src/app/shared/button/button.module';
 import {ReactiveFormsModule } from '@angular/forms';
+import { MatDialogModule } from '@angular/material/dialog';
+import { InputModule } from 'src/app/shared/input/input.module';
+import { AddUserModule } from '../../shared/add-user/add-user.module';
 
 
 @NgModule({
@@ -17,7 +20,9 @@ import {ReactiveFormsModule } from '@angular/forms';
     UserRoutingModule,
     UserdetailsModule,
     ButtonModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatDialogModule,
+    AddUserModule
   ]
 })
 export class UserModule { }

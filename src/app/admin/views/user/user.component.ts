@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
+import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 import { ActivityService } from '../../services/activityService/activity.service';
+import { AddUserComponent } from '../../shared/add-user/add-user.component';
 
 @Component({
   selector: 'app-user',
@@ -13,7 +15,7 @@ export class UserComponent implements OnInit {
   cond:boolean = false
   condition:boolean = true
 
-  constructor(public fb:FormBuilder, public users:ActivityService) { }
+  constructor(public fb:FormBuilder, public users:ActivityService,private dialog:MatDialog) { }
 
   formdata = this.fb.group({
     search:['']
@@ -30,7 +32,12 @@ export class UserComponent implements OnInit {
       this.condition = false
   }
 }
-  navigate(){
-   
+  navigate(){}
+  openDialog(){
+    console.log('working');
+    const dialogConfig = new MatDialogConfig();
+    dialogConfig.autoFocus = true
+    dialogConfig.disableClose = true
+     this.dialog.open(AddUserComponent, dialogConfig);
   }
 }
