@@ -4,7 +4,7 @@ import { Component, OnInit, Input } from '@angular/core';
   selector: 'card-content',
   template: `
   <div *ngIf="cardTitle=='insight'">
-    <card>
+    <card maxheight="150">
         <div class="my-3">
             <h3 class="text-center">
             {{title}}

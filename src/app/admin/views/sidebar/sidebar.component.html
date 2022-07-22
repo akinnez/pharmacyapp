@@ -6,17 +6,19 @@
         <!-- <img src="../../../../assets/lawkonetlogo.jpeg" alt="" /> -->
       </div>
       <div class="mat-title d-flex justify-content-between">
-        <div (click)="sideBarToggle()">PHARMACYAPP</div>
-        <div class="closebtn">
-          <button (click)="sideBarToggle()">&times;</button>
+        <!-- <div (click)="sideBarToggle()">PHARMACYAPP</div> -->
+        <div class="closebtn {{appy}}" >
+          <button (click)="sideBarToggle()" class="admin text-white">&times;</button>
         </div>
       </div>
     </div>
     <div>
-      <a mat-list-item class="mt-3" routerLink="/admin/{{item.link}}" (click)="sideBarToggle()"
-        *ngFor="let item of sidelist">
-          <mat-icon>{{item.icon}}</mat-icon>
-          <span class="ps-3 text-white">{{item.text}}</span>
+      <a mat-list-item class="mt-4 " routerLink="/admin/{{item.link}}" 
+        *ngFor="let item of sidelist" title="{{item.text}}">
+          <small class="d-inline mx-auto">
+            <mat-icon>{{item.icon}}</mat-icon>
+            <span class="ps-3 text-white {{appy}} fw-bold" [style.letterSpacing.px]="val" >{{item.text}}</span>
+          </small>
       </a>
     </div>
   </mat-nav-list>

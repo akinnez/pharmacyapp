@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { SummaryComponent } from './summary.component';
+import { CardModule } from '../card/card.module';
 
 
 
@@ -9,7 +10,8 @@ import { SummaryComponent } from './summary.component';
     SummaryComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    CardModule
   ],
   exports:[SummaryComponent]
 })

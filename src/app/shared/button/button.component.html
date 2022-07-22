@@ -1,11 +1,13 @@
 
 <div class="{{mclass}}" *ngIf="buttonSection ==='frontend'">
     <button class="btn btn-lg frontend" (click)="event()">
+      <mat-icon *ngIf="!text">{{icon}}</mat-icon>
         {{text}}
       </button>
 </div>
 <div class="{{mclass}}" *ngIf="buttonSection ==='admin'">
     <button class="btn btn-lg admin" (click)="event()">
+      <mat-icon *ngIf="!text">{{icon}}</mat-icon>
         {{text}}
       </button>
 </div>

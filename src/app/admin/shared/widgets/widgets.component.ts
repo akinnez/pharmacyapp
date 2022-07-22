@@ -11,7 +11,8 @@ Chart.register(...registerables);
 export class WidgetsComponent implements OnInit {
   @Input() title: string = '';
   myChart:any
-  chart:any
+  chart:any;
+ 
 
   constructor(private data: DashboardService) {}
 

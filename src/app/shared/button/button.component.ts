@@ -9,6 +9,7 @@ export class ButtonComponent implements OnInit {
   @Input() text:string = '';
   @Input() buttonSection:string = '';
   @Input() mclass:string = '';
+  @Input() icon:string = '';
   @Output() mclick:EventEmitter<any>= new EventEmitter
   constructor() { }
 

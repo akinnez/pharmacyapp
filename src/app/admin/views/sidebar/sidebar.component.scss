@@ -4,8 +4,8 @@
       color: #fff;
     }
   }
-   .closebtn{
-     display: none;
+   div.closebtn{
+      font-size: 3rem 
    }
   .profile-card {
     padding: 15px 15px 0px 15px;
@@ -16,11 +16,5 @@
       height: 50px;
       object-fit: cover;
       border-radius: 50%;
-    }
-  }
-
-  @media (max-width:768px) {
-    .closebtn{
-      display: block;
     }
   }
