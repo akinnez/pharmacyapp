@@ -15,14 +15,14 @@
     <div class="container-fluid mt-5">
         <h2>List of User(s)</h2>
     </div>
-    <div class="mb-5" *ngIf="condition">
-        <div *ngFor="let item of user,let i=index">
+    <div class="row mb-5" *ngIf="condition">
+        <div *ngFor="let item of user,let i=index" class="col-sm-6 col-md-4 col-lg-3">
             <app-userdetails
+                img = "{{item.img}}"
                 name="{{item.name}}"
                 email="{{item.email}}"
-                age="{{item.age}}"
-                username="{{item.username}}"
-                id="{{i+1}}"
+                phoneNo="{{item.phoneNo}}"
+                id = "{{i}}"
             ></app-userdetails>
         </div>
     </div>

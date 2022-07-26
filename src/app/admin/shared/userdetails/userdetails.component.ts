@@ -1,4 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
+import { Router } from '@angular/router';
+import { DeleteNotificationComponent } from '../delete-notification/delete-notification.component';
 
 @Component({
   selector: 'app-userdetails',
@@ -7,26 +10,27 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class UserdetailsComponent implements OnInit {
  @Input() name: string = '';
+ @Input() img: string = '';
  @Input() email:string='';
- @Input() age:string='';
- @Input() username:string='';
- @Input() id:string='';
- show:boolean = false;
- info:string='';
+ @Input() id:any;
+ @Input() phoneNo:any;
 
- userInfo = [
-   {}
-  ]
+  constructor(private dialog:MatDialog, private route:Router) { }
+routee(){
+  this.route.navigate(['admin/dashboard/users/info', this.name])
 
-
-  constructor() { }
-
-
+}
+openDialog(){
+  console.log("open");
+  const dialogConfig = new MatDialogConfig();
+    dialogConfig.autoFocus = true
+     this.dialog.open(DeleteNotificationComponent,{
+      data: { id: Number(this.id),name:this.name },
+     });
+}
 
   ngOnInit(): void {
   }
- checkUser(){
-   this.show = !this.show
- }
+ 
 
 }

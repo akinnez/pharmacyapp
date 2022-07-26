@@ -7,8 +7,9 @@ import { UserdetailsModule } from '../../shared/userdetails/userdetails.module';
 import { ButtonModule } from 'src/app/shared/button/button.module';
 import {ReactiveFormsModule } from '@angular/forms';
 import { MatDialogModule } from '@angular/material/dialog';
-import { InputModule } from 'src/app/shared/input/input.module';
 import { AddUserModule } from '../../shared/add-user/add-user.module';
+import { UserDetailsPageModule } from '../../shared/user-details-page/user-details-page.module';
+import { UserDetailsPageComponent } from '../../shared/user-details-page/user-details-page.component';
 
 
 @NgModule({
@@ -19,6 +20,7 @@ import { AddUserModule } from '../../shared/add-user/add-user.module';
     CommonModule,
     UserRoutingModule,
     UserdetailsModule,
+    UserDetailsPageModule,
     ButtonModule,
     ReactiveFormsModule,
     MatDialogModule,

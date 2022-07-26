@@ -6,7 +6,7 @@
 }
 
 mat-drawer {
-  width: 5%;
+  // width: 5% !important;
   border-left: none !important;
 }
 mat-drawer-content {
@@ -17,7 +17,18 @@ mat-drawer-content {
 // media queries
 
 @media (max-width: 991px) {
-  mat-drawer {
-    width: 100%;
+  // mat-drawer {
+  //   width: 100% !important;
+  // }
+}
+@media screen and (min-width:1440px) {
+  div.chk{
+      width: 100%;
+      max-width:1440px;
+  }
+  div.xxl{
+      display: flex;
+      justify-content: center;
+      width:100%;
   }
 }

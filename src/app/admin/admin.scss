@@ -1,6 +1,8 @@
 $text-color: #902F4C;
 
-
+div.rounded-circle{
+  border: 2px solid $text-color;
+}
 
 mat-drawer {
   background-color: $text-color !important;

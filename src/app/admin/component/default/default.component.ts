@@ -8,19 +8,28 @@ import { AfterViewInit, Component, ElementRef, OnInit, ViewChild} from '@angular
 })
 export class DefaultComponent implements OnInit {
   observer:any;
-  sideBarOpen:any
+  sideBarOpen:boolean = true
+  // val:number = 0
+  value:number = 0
   constructor() {}
 
   ngOnInit():void {
     this.observer = document.querySelector('body');
      new ResizeObserver((entries)=>{
-      console.log(entries[0].contentRect.width > 991);
-      
-     (entries[0].contentRect.width > 991 ? this.sideBarOpen = true : this.sideBarOpen = false )
+     (entries[0].contentRect.width < 991 ? this.doclose() : this.doOpen());
+    //  (entries[0].contentRect.width >= 1440 ? this.value = (entries[0].contentRect.width/ 1440) * 7: "" )
      }).observe(this.observer)
   }
   toggleSideBar(){
     this.sideBarOpen = !this.sideBarOpen
+  }
+  doOpen(){
+    this.sideBarOpen = true
+    this.value = 5
+  }
+  doclose(){
+    this.sideBarOpen = false
+    this.value = 100
   }
  
 }

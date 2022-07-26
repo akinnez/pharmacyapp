@@ -16,10 +16,12 @@ export interface IActivity{
     lastSeen: number
   }
 export interface IUser{
+    img:string,
     name: string,
     username:string,
     age:number,
-    email:string
+    email:string,
+    phoneNo:number;
 }
 export interface IProductlist {
   src: string,

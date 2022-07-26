@@ -1,0 +1,11 @@
+div.image-frame{
+    // background: -webkit-radial-gradient(45deg,#902F4C,#502F4C);
+    background: -webkit-repeating-linear-gradient(
+        30deg,
+        #902F4C 0px,
+        #902F4C 10px,
+        #502F4C 10px,
+        #502F4C 20px,
+
+        )
+}

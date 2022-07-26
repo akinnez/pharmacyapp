@@ -5,6 +5,7 @@ body,html{width: 100%;margin: 0;}
 *{
 margin: 0;
 padding: 0;
+text-decoration: none;
 font-family: 'Ubuntu', sans-serif;
     }
 
@@ -13,5 +14,15 @@ input{
     color: $text-color !important;
 }
 
+
+::-webkit-scrollbar{
+    width: 6px;
+  }
+  ::-webkit-scrollbar-thumb{
+    background: linear-gradient($text-color,white);
+  }
+  ::-webkit-scrollbar-thumb:hover{
+    background: linear-gradient(white,$text-color);
+  }
 
 @import '~bootstrap/scss/bootstrap';

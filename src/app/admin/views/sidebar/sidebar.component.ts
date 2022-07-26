@@ -27,7 +27,7 @@ export class SidebarComponent implements OnInit {
    this.observer = document.querySelector('body')
    new ResizeObserver((e)=>{
     this.lengthy = e[0].contentRect.width;
-      (e[0].contentRect.width > 991 ? this.doValue():this.dontValue()  )
+      (e[0].contentRect.width >= 991 ? this.doValue(): this.dontValue());
    }).observe(this.observer)
    
     setTimeout(()=>{
@@ -41,7 +41,8 @@ export class SidebarComponent implements OnInit {
     this.toggleSideBarForMe.emit();
   }
   doValue(){
-    this.appy ='d-none';
+    this.appy = 'd-none'
+    this.val= 0
   }
   dontValue(){
     this.appy = 'd-inline';

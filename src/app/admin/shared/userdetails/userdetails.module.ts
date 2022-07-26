@@ -1,7 +1,8 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { UserdetailsComponent } from './userdetails.component';
-import { ButtonModule } from 'src/app/shared/button/button.module';
+import { MatIconModule } from '@angular/material/icon';
+import { DeleteNotificationModule } from '../delete-notification/delete-notification.module';
 
 
 
@@ -11,7 +12,8 @@ import { ButtonModule } from 'src/app/shared/button/button.module';
   ],
   imports: [
     CommonModule,
-    ButtonModule
+    MatIconModule,
+    DeleteNotificationModule
   ],
   exports:[UserdetailsComponent]
 })
