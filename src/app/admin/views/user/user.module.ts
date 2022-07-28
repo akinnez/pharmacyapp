@@ -9,12 +9,12 @@ import {ReactiveFormsModule } from '@angular/forms';
 import { MatDialogModule } from '@angular/material/dialog';
 import { AddUserModule } from '../../shared/add-user/add-user.module';
 import { UserDetailsPageModule } from '../../shared/user-details-page/user-details-page.module';
-import { UserDetailsPageComponent } from '../../shared/user-details-page/user-details-page.component';
 
 
 @NgModule({
   declarations: [
-    UserComponent
+    UserComponent,
+    
   ],
   imports: [
     CommonModule,
@@ -24,7 +24,7 @@ import { UserDetailsPageComponent } from '../../shared/user-details-page/user-de
     ButtonModule,
     ReactiveFormsModule,
     MatDialogModule,
-    AddUserModule
+    AddUserModule,
   ]
 })
 export class UserModule { }

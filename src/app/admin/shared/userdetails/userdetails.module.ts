@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { UserdetailsComponent } from './userdetails.component';
 import { MatIconModule } from '@angular/material/icon';
 import { DeleteNotificationModule } from '../delete-notification/delete-notification.module';
+import { MatTabsModule } from '@angular/material/tabs';
 
 
 
@@ -13,7 +14,8 @@ import { DeleteNotificationModule } from '../delete-notification/delete-notifica
   imports: [
     CommonModule,
     MatIconModule,
-    DeleteNotificationModule
+    DeleteNotificationModule,
+    MatTabsModule
   ],
   exports:[UserdetailsComponent]
 })

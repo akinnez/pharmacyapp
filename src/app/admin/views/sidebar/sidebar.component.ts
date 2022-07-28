@@ -47,6 +47,7 @@ export class SidebarComponent implements OnInit {
   dontValue(){
     this.appy = 'd-inline';
     this.val = (this.lengthy / 990) * 10
+    
   }
  
 }

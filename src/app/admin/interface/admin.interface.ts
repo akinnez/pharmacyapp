@@ -15,6 +15,21 @@ export interface IActivity{
     duration: number,
     lastSeen: number
   }
+  interface Logs{
+    activity: string;
+    logInTime: Date | number ;
+    logOutTime:Date | number ;
+  }
+  export interface IProduct{
+    name: string;
+    category: string;
+    qtty: number;
+    price: number;
+  }
+  export interface ITransaction{
+    transactionId:number;
+    product:IProduct[];
+  }
 export interface IUser{
     img:string,
     name: string,
@@ -22,6 +37,8 @@ export interface IUser{
     age:number,
     email:string,
     phoneNo:number;
+    logs: [Logs];
+    transaction:ITransaction[]
 }
 export interface IProductlist {
   src: string,

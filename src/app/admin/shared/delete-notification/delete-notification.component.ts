@@ -20,7 +20,8 @@ export class DeleteNotificationComponent implements OnInit {
     this.dialogRef.close();
   }
   delete(){
-  this.userdata.users = this.userdata.users.splice(this.data.id,1) 
-  this.dialogRef.close();
+    this.dialogRef.close();
+    console.log(this.data.id);
+    this.userdata.users.splice(this.data.id,1) 
   }
 }

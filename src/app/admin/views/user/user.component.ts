@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
 import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
-import { ActivityService } from '../../services/activityService/activity.service';
+import { UserService } from '../../services/userService/user.service';
 import { AddUserComponent } from '../../shared/add-user/add-user.component';
 
 @Component({
@@ -15,14 +15,14 @@ export class UserComponent implements OnInit {
   cond:boolean = false
   condition:boolean = true
 
-  constructor(public fb:FormBuilder, public users:ActivityService,private dialog:MatDialog) { }
+  constructor(public fb:FormBuilder, public users:UserService,private dialog:MatDialog) { }
 
   formdata = this.fb.group({
     search:['']
   }) 
 
   ngOnInit(): void {
-    this.user = this.users.user
+    this.user = this.users.users
     this.checkActivities()
   }
 

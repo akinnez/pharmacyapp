@@ -1,0 +1,49 @@
+<div *ngIf="transactions !== []" class="table-responsive mt-2">
+    <table class="table text-center table-striped table-danger">
+        <thead class="py-3">
+            <th>S/No</th>
+            <th>Transaction ID</th>
+            <th>Category</th>
+            <th>Product(s)</th>
+            <th>Price(s)</th>
+            <th>Quantities</th>
+            <th>Total(NGN)</th>
+        </thead>
+        <tbody>
+            <tr *ngFor="let transaction of transactions; let i = index">
+                <td>{{i + 1}}</td>
+                <td>{{transaction.transactionId}}</td>
+
+                <td>
+                    <div *ngFor="let products of transaction.product">
+                        {{products.category}}
+                    </div> 
+                </td>
+                <td>
+                    <div *ngFor="let products of transaction.product" class="fw-bold">
+                        {{products.name}}
+                    </div> 
+                </td>
+                <td>
+                    <div *ngFor="let products of transaction.product">
+                        {{products.price | number}}
+                    </div> 
+                </td>
+                <td>
+                    <div *ngFor="let products of transaction.product">
+                        {{products.qtty}}
+                    </div> 
+                </td> 
+                <td>
+                    <div *ngFor="let products of transaction.product">
+                        {{products.qtty * products.price | number}}
+                    </div> 
+                </td>
+            </tr>
+        </tbody>
+      </table>
+</div>
+
+<div *ngIf="transactions == []">
+    <h4>No transaction done yet</h4>
+</div>
