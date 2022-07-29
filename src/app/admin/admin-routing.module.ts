@@ -17,7 +17,7 @@ const routes: Routes = [
         path:"",
         loadChildren:()=> import('./views/form/form.module').then(m=>m.FormModule)
       },
-      {path:" ", redirectTo:" ",pathMatch:'full'},
+      {path:" ", redirectTo:"/",pathMatch:'full'},
       {
         path:'dashboard',
         loadChildren:()=> import('./component/default/default.module').then(m=>m.DefaultModule)

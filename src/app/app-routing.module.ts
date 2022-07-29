@@ -12,7 +12,7 @@ const routes: Routes = [
     path:'admin',
     loadChildren: ()=>import('./admin/admin.module').then(m=>m.AdminModule)
   },
-  {path:"admin", redirectTo:"/admin",pathMatch:'full'},
+  {path:"admin", redirectTo:"admin",pathMatch:'full'},
   {
       path:"**",
       component:NotfoundComponent
