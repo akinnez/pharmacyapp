@@ -4,7 +4,6 @@ import { SupermarketComponent } from './supermarket.component';
 
 const routes: Routes = [
   {path:'',component:SupermarketComponent},
-  {path:" ", redirectTo:" ",pathMatch:'full'}
 ];
 
 @NgModule({

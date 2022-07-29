@@ -11,12 +11,6 @@ const routes: Routes = [
       {path:"users", loadChildren:()=> import('../../views/user/user.module').then(m=>m.UserModule)},
       {path:"pharmacy", loadChildren:()=> import('../../views/pharmacy/pharmacy.module').then(m=>m.PharmacyModule)},
       {path:"supermarket", loadChildren:()=> import('../../views/supermarket/supermarket.module').then(m=>m.SupermarketModule)},
-      // {path:"pharmacy", loadChildren:()=> import('../../views/pharmacy/pharmacy.module').then(m=>m.PharmacyModule)},
-     //redirects
-      {path:" ", redirectTo:" ",pathMatch:'full'},
-      {path:"users", redirectTo:"users",pathMatch:'full'},
-      {path:"pharmacy", redirectTo:"pharmacy",pathMatch:'full'},
-      {path:"supermarket", redirectTo:"supermarket",pathMatch:'full'}
     ]
   }
 ];
