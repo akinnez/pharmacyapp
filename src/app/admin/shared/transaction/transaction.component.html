@@ -1,6 +1,6 @@
-<div *ngIf="transactions !== []" class="table-responsive mt-2">
+<div *ngIf="transactions !== []" class="table-responsive">
     <table class="table text-center table-striped table-danger">
-        <thead class="py-3">
+        <thead>
             <th>S/No</th>
             <th>Transaction ID</th>
             <th>Category</th>
@@ -13,7 +13,6 @@
             <tr *ngFor="let transaction of transactions; let i = index">
                 <td>{{i + 1}}</td>
                 <td>{{transaction.transactionId}}</td>
-
                 <td>
                     <div *ngFor="let products of transaction.product">
                         {{products.category}}
