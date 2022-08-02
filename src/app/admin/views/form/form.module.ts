@@ -7,15 +7,12 @@ import { ButtonModule } from 'src/app/shared/button/button.module';
 import { InputModule } from 'src/app/shared/input/input.module';
 import { FormsModule,ReactiveFormsModule } from '@angular/forms';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
-// import { AddGoodsComponent } from './add-goods/add-goods.component';
-// import { AddDrugsFormComponent } from './add-drugs-form/add-drugs-form.component';
+import { MatIconModule } from '@angular/material/icon';
 
 
 @NgModule({
   declarations: [
-    SigninComponent,
-    // AddGoodsComponent,
-    // AddDrugsFormComponent
+    SigninComponent
   ],
   imports: [
     CommonModule,
@@ -24,6 +21,7 @@ import { MatProgressBarModule } from '@angular/material/progress-bar';
     InputModule,
     FormsModule,
     MatProgressBarModule,
+    MatIconModule,
     ReactiveFormsModule
   ]
 })

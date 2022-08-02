@@ -1,0 +1,19 @@
+<div class="mt-3" *ngIf="section ==='drugs'">
+    <form [formGroup]="formBulk" (submit)="bulkdrugs()">
+        <h4>Add Bulk</h4>
+        <input type="file" accept="" class="admin form-control" formControlName ="src">
+            <button class="admin btn mt-1">
+                <mat-icon>arrow_forward</mat-icon>
+            </button>
+    </form>
+  </div>
+
+<div class="mt-3" *ngIf="section ==='goods'">
+    <form [formGroup]="formBulk" (submit)="bulkgoods()">
+        <h4>Add Bulk</h4>
+        <input type="file" accept="" class="admin form-control" formControlName ="src">
+            <button class="admin btn mt-1">
+                <mat-icon>arrow_forward</mat-icon>
+            </button>
+    </form>
+  </div>

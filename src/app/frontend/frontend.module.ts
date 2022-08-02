@@ -4,6 +4,7 @@ import { CommonModule } from '@angular/common';
 import { FrontendRoutingModule } from './frontend-routing.module';
 import { FrontendComponent } from './frontend.component';
 import { DefaultModule } from './views/default/default.module';
+
 @NgModule({
   declarations: [
     FrontendComponent,

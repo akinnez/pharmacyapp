@@ -47,6 +47,7 @@ public users:IUser[] = [
     transaction:[
       {
       transactionId: 35732,
+      transactionDate: 12222,
       product:[
         {
           name: 'green',
@@ -70,6 +71,7 @@ public users:IUser[] = [
       },
       {
         transactionId: 35732,
+        transactionDate: 12222,
         product:[{
             name: 'reen',
             category: 'pharmacy',

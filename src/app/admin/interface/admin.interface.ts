@@ -28,6 +28,7 @@ export interface IActivity{
   }
   export interface ITransaction{
     transactionId:number;
+    transactionDate:Date | number;
     product:IProduct[];
   }
 export interface IUser{
@@ -41,7 +42,6 @@ export interface IUser{
     transaction:ITransaction[]
 }
 export interface IProductlist {
-  src: string,
   name: string,
   companyName:string,
   itemCode:number,

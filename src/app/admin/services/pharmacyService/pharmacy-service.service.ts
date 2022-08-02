@@ -7,7 +7,6 @@ import { IProductlist } from '../../interface/admin.interface';
 export class PharmacyServiceService {
 medlist:IProductlist[] = [
   {
-    src:'../../../../assets/images/admin/pineapple_PNG2750.png',
     name: '',
     companyName:'',
     itemCode: 10,
@@ -17,7 +16,6 @@ medlist:IProductlist[] = [
     exp: ''
   },
   {
-    src:'../../../../assets/images/admin/R.jfif',
     name: 'bolaji johnson',
     companyName:'bolajijohnson Inc.',
     itemCode: 100,

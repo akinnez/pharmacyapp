@@ -5,14 +5,19 @@ import { FrontendComponent } from './frontend.component';
 
 const routes: Routes = [
   {
-    path:"",
-    component:FrontendComponent,
+    path:"", component:FrontendComponent,
     children:[
+      {
+        path: "", loadChildren:()=>import('./views/landing-page/landing-page.module').then(m=>m.LandingPageModule)
+      },
       {
         path:'',component:DefaultComponent,
         children:[
           {
-            path:'', loadChildren:()=>import('./views/home/home.module').then(m=>m.HomeModule)
+            path:'home', loadChildren:()=>import('./views/home/home.module').then(m=>m.HomeModule)
+          },
+          {
+            path:'home/:name', loadChildren:()=>import('./views/home/home.module').then(m=>m.HomeModule)
           },
           {
             path:'store', loadChildren:()=>import ('./views/store/store.module').then(e=>e.StoreModule)
@@ -22,9 +27,6 @@ const routes: Routes = [
             loadChildren:()=>import ('./views/inventory/inventory.module').then(n=>n.InventoryModule)
           }
         ]
-      },
-      {
-        path:'home', redirectTo:"", pathMatch:'full'
       },
       {
         path:'form',loadChildren:()=>import ('./views/form/form.module').then(m=>m.FormModule)

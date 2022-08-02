@@ -1,11 +1,9 @@
 button{
-    padding: 10px 25px !important;
     font-size: 18px;
     transition: background-color 800ms ease-in-out;
-    border-radius: 0px;
     font-weight: 600 !important;
 }
 button:focus{
-    box-shadow: none;
+    box-shadow: none !important;
 }
 

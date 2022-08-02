@@ -17,8 +17,7 @@ username: string;
 phoneNo: number;
 userInfo: any;
 img:string
-prim: string= '#502F4C';
-secon: string= '#902F4C';
+
 
 
   constructor(public user:UserService, public route:ActivatedRoute) {

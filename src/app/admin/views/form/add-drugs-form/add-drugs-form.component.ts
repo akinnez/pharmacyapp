@@ -18,7 +18,9 @@ export class AddDrugsFormComponent implements OnInit {
       price:[0],
       mfd:[''],
       exp:[''],
-    })
+    });
+
+
   }
 
   ngOnInit(): void {

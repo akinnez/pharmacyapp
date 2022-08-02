@@ -12,7 +12,7 @@ import { AddDrugsModule } from '../../shared/add-drugs/add-drugs.module';
 
 @NgModule({
   declarations: [
-    PharmacyComponent
+    PharmacyComponent,
   ],
   imports: [
     CommonModule,

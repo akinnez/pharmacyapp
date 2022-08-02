@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { UserService } from 'src/app/admin/services/userService/user.service';
 
 @Component({
   selector: 'app-navbar',
@@ -6,8 +8,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./navbar.component.scss']
 })
 export class NavbarComponent implements OnInit {
-  constructor() { }
+  @Input() section:string = '';
+  @Input() params:string = '';
+  name:string = '';
+  constructor(private user:UserService) { 
+  }
 
   ngOnInit(): void {
+    console.log(this.user.users);
+    
+    
   }
 }

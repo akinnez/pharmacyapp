@@ -3,6 +3,7 @@
         <thead>
             <th>S/No</th>
             <th>Transaction ID</th>
+            <th>Date</th>
             <th>Category</th>
             <th>Product(s)</th>
             <th>Price(s)</th>
@@ -13,6 +14,7 @@
             <tr *ngFor="let transaction of transactions; let i = index">
                 <td>{{i + 1}}</td>
                 <td>{{transaction.transactionId}}</td>
+                <td>{{transaction.transactionDate}}</td>
                 <td>
                     <div *ngFor="let products of transaction.product">
                         {{products.category}}
@@ -25,7 +27,7 @@
                 </td>
                 <td>
                     <div *ngFor="let products of transaction.product">
-                        {{products.price | number}}
+                        {{products.price | currency:'NGN':'&#8358;':'1.2-2'}}
                     </div> 
                 </td>
                 <td>
@@ -35,7 +37,7 @@
                 </td> 
                 <td>
                     <div *ngFor="let products of transaction.product">
-                        {{products.qtty * products.price | number}}
+                        {{products.qtty * products.price | currency:'NGN':'&#8358;':'1.2-2'}}
                     </div> 
                 </td>
             </tr>

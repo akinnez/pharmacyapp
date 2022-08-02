@@ -7,20 +7,21 @@ div.rounded-circle{
 mat-drawer {
   background-color: $text-color !important;
 }
+input:focus{
+  box-shadow: none !important;
+}
 
 button.admin{
-border: 2px solid $text-color;
-background-color: transparent
+background-color: transparent;
 }
 button.admin:hover{
    background-color: $text-color !important;
    color: white !important;
-   border-radius: 10px;
  }
  div.carddeco::before,div.carddeco::after{
   background-color: rgba($color: $text-color, $alpha: 0.82);
  }
- input.admin{
+ div.admin{
   border: 2.75px solid $text-color !important;
   color: $text-color !important;
 }
