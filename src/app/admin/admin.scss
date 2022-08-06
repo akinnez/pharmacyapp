@@ -28,3 +28,13 @@ button.admin:hover{
 label.admin,h1.admin,h6.admin,span.admin{
   color: $text-color !important;
 }
+
+::-webkit-scrollbar{
+  width: 6px !important;
+}
+::-webkit-scrollbar-thumb{
+  background: linear-gradient($text-color,white) !important;
+}
+::-webkit-scrollbar-thumb:hover{
+  background: linear-gradient(white,$text-color) !important;
+}

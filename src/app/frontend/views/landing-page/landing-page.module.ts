@@ -16,6 +16,7 @@ import { ButtonModule } from 'src/app/shared/button/button.module';
     NavbarModule,
     FooterModule,
     ButtonModule
-  ]
+  ],
+  exports:[LandingPageComponent]
 })
 export class LandingPageModule { }

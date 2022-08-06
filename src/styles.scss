@@ -2,12 +2,18 @@
 $text-color: #502F4C;
 /* Importing Bootstrap SCSS file. */
 body,html{width: 100%;margin: 0;}
+:root{
+  --color:#502F4C;
+}
+
 *{
 margin: 0;
 padding: 0;
-text-decoration: none;
+text-decoration: none !important;
+list-style-type: none;
 font-family: 'Ubuntu', sans-serif;
-    }
+scroll-behavior: smooth !important;
+  }
 
 input{
     border: 2.75px solid $text-color !important;
@@ -15,14 +21,6 @@ input{
 }
 
 
-::-webkit-scrollbar{
-    width: 6px;
-  }
-  ::-webkit-scrollbar-thumb{
-    background: linear-gradient($text-color,white);
-  }
-  ::-webkit-scrollbar-thumb:hover{
-    background: linear-gradient(white,$text-color);
-  }
+
 
 @import '~bootstrap/scss/bootstrap';

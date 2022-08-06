@@ -1,57 +1,134 @@
-<app-navbar section="landing"></app-navbar>
-<div class="pb-5">
-    <div class="row m-0 py-3 w-100 bg-warning" id="roww">
-        <div class="col-sm-6 d-flex justify-content-center align-items-center">
-            <div class="manage">
-                <h1 class="fw-bold">Managing your store becomes a lot easier</h1>
-                <span>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur reiciendis dolore esse veniam! Dicta sapiente nam nostrum fugit mollitia architecto saepe dolores modi qui dolore, iste consequuntur id earum ipsum!
-                </span>
-                <div class="mt-3">
-                    <a href="/form/login">
-                        <app-button buttonSection="frontend" text="Sign In"></app-button>
-                      </a>
+
+<div *ngIf="section=='landing'">
+    <app-navbar section="landing"></app-navbar>
+    <div>
+        <div class="pb-5">
+            <div class="row m-0 py-3 w-100 bg-warning" id="roww">
+                <div class="col-sm-6 d-flex justify-content-center align-items-center">
+                    <div class="manage">
+                        <h1 class="fw-bold">Managing your store becomes a lot easier</h1>
+                        <span>
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur reiciendis dolore esse veniam! Dicta sapiente nam nostrum fugit mollitia architecto saepe dolores modi qui dolore, iste consequuntur id earum ipsum!
+                        </span>
+                        <div class="mt-3">
+                            <a href="/form/login">
+                                <app-button buttonSection="frontend" text="Sign In"></app-button>
+                              </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 d-flex justify-content-center align-items-center" id="img">
+                        <div>
+                            <img class="img1 w-100" src="../../../../assets/images/frontend/pexels-pixabay-208518-removebg-preview1.png" alt="">
+                        </div>
                 </div>
             </div>
         </div>
-        <div class="col-sm-6 d-flex justify-content-center align-items-center" id="img">
-                <div>
-                    <img class="img1 w-100" src="../../../../assets/images/frontend/pexels-pixabay-208518-removebg-preview1.png" alt="">
+        <div>
+            <div class="container-fluid mt-3 w-75 mx-auto">
+                    <div class="text-center" id="wedo">
+                        <h1>Taking care of your needs</h1>
+                    </div>
+                    <div class="row p-0 m-0 w-100 mt-5 mx-auto">
+                        <div class="col-md-4 d-flex justify-content-center align-items-center">
+                            <div class="card">
+                                <div class="inner-card">
+                                    <h4 class="mb-3 fw-bold">Sorting your store easily</h4>
+                                    <span>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ullam voluptatem odit, hic nobis adipisci distinctio magnam expedita voluptatibus. Facilis voluptate cupiditate repellat nesciunt maiores, officia vero modi tempore animi accusantium.</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 d-flex justify-content-center align-items-center">
+                            <div class="card">
+                                <div class="inner-card">
+                                    <h4 class="mb-3 fw-bold">Sorting your store easily</h4>
+                                    <span>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ullam voluptatem odit, hic nobis adipisci distinctio magnam expedita voluptatibus. Facilis voluptate cupiditate repellat nesciunt maiores, officia vero modi tempore animi accusantium.</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 d-flex justify-content-center align-items-center">
+                            <div class="card">
+                                <div class="inner-card">
+                                    <h4 class="mb-3 fw-bold">Sorting your store easily</h4>
+                                    <span>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ullam voluptatem odit, hic nobis adipisci distinctio magnam expedita voluptatibus. Facilis voluptate cupiditate repellat nesciunt maiores, officia vero modi tempore animi accusantium.</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mt-5" id="about">
+                            <h1 class="text-center">About Us</h1>
+                            <span>
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil et ullam sunt blanditiis corrupti ipsam aliquam ad vitae quibusdam. Optio, sapiente quisquam! Soluta itaque quia quisquam rem consectetur ipsam veritatis?
+                            </span>
+                    </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="mt-5">
+        <app-footer section="landing"></app-footer>
+    </div>
+</div>
+<div  *ngIf="section=='home'">
+    <div class="pb-5">
+        <div class="row m-0 py-3 w-100 bg-warning" id="roww">
+            <div class="col-sm-6 d-flex justify-content-center align-items-center">
+                <div class="manage">
+                    <h1 class="fw-bold">Managing your store becomes a lot easier</h1>
+                    <span>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur reiciendis dolore esse veniam! Dicta sapiente nam nostrum fugit mollitia architecto saepe dolores modi qui dolore, iste consequuntur id earum ipsum!
+                    </span>
+                    <div class="mt-3">
+                        <a href="user/{{params}}/inventory">
+                            <app-button buttonSection="frontend" text="Explore"></app-button>
+                          </a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6 d-flex justify-content-center align-items-center" id="img">
+                    <div>
+                        <img class="img1 w-100" src="../../../../assets/images/frontend/pexels-pixabay-208518-removebg-preview1.png" alt="">
+                    </div>
+            </div>
+        </div>
+    </div>
+    <div>
+        <div class="container-fluid mt-3 w-75 mx-auto">
+                <div class="text-center" id="wedo">
+                    <h1>Taking care of your needs</h1>
+                </div>
+                <div class="row p-0 m-0 w-100 mt-5 mx-auto">
+                    <div class="col-md-4 d-flex justify-content-center align-items-center">
+                        <div class="card">
+                            <div class="inner-card">
+                                <h4 class="mb-3 fw-bold">Sorting your store easily</h4>
+                                <span>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ullam voluptatem odit, hic nobis adipisci distinctio magnam expedita voluptatibus. Facilis voluptate cupiditate repellat nesciunt maiores, officia vero modi tempore animi accusantium.</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 d-flex justify-content-center align-items-center">
+                        <div class="card">
+                            <div class="inner-card">
+                                <h4 class="mb-3 fw-bold">Sorting your store easily</h4>
+                                <span>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ullam voluptatem odit, hic nobis adipisci distinctio magnam expedita voluptatibus. Facilis voluptate cupiditate repellat nesciunt maiores, officia vero modi tempore animi accusantium.</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 d-flex justify-content-center align-items-center">
+                        <div class="card">
+                            <div class="inner-card">
+                                <h4 class="mb-3 fw-bold">Sorting your store easily</h4>
+                                <span>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ullam voluptatem odit, hic nobis adipisci distinctio magnam expedita voluptatibus. Facilis voluptate cupiditate repellat nesciunt maiores, officia vero modi tempore animi accusantium.</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="mt-5" id="about">
+                        <h1 class="text-center">About Us</h1>
+                        <span>
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil et ullam sunt blanditiis corrupti ipsam aliquam ad vitae quibusdam. Optio, sapiente quisquam! Soluta itaque quia quisquam rem consectetur ipsam veritatis?
+                        </span>
                 </div>
         </div>
     </div>
 </div>
-<div>
-    <div class="container-fluid mt-3">
-            <div class="text-center">
-                <h1>Taking care of your needs</h1>
-            </div>
-            <div class="row p-0 m-0 w-75 mt-5 mx-auto">
-                <div class="col-md-4 d-flex justify-content-center align-items-center">
-                    <div class="card">
-                        <div class="inner-card">
-                            <h4 class="mb-3 fw-bold">Sorting your store easily</h4>
-                            <span>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ullam voluptatem odit, hic nobis adipisci distinctio magnam expedita voluptatibus. Facilis voluptate cupiditate repellat nesciunt maiores, officia vero modi tempore animi accusantium.</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 d-flex justify-content-center align-items-center">
-                    <div class="card">
-                        <div class="inner-card">
-                            <h4 class="mb-3 fw-bold">Sorting your store easily</h4>
-                            <span>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ullam voluptatem odit, hic nobis adipisci distinctio magnam expedita voluptatibus. Facilis voluptate cupiditate repellat nesciunt maiores, officia vero modi tempore animi accusantium.</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 d-flex justify-content-center align-items-center">
-                    <div class="card">
-                        <div class="inner-card">
-                            <h4 class="mb-3 fw-bold">Sorting your store easily</h4>
-                            <span>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ullam voluptatem odit, hic nobis adipisci distinctio magnam expedita voluptatibus. Facilis voluptate cupiditate repellat nesciunt maiores, officia vero modi tempore animi accusantium.</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-    </div>
-</div>
-<app-footer></app-footer>

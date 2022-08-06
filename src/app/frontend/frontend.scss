@@ -14,3 +14,13 @@ button.frontend:hover{
     background-color: $text-color;
     color: white !important;
 }
+
+::-webkit-scrollbar{
+    width: 10px !important;
+  }
+  ::-webkit-scrollbar-thumb{
+    background: linear-gradient($text-color,--color) !important;
+  }
+  ::-webkit-scrollbar-thumb:hover{
+    background: linear-gradient(gold,$text-color) !important;
+  }

@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { Router } from '@angular/router';
 import { UserService } from 'src/app/admin/services/userService/user.service';
 
 @Component({
@@ -10,13 +10,28 @@ import { UserService } from 'src/app/admin/services/userService/user.service';
 export class NavbarComponent implements OnInit {
   @Input() section:string = '';
   @Input() params:string = '';
+  user:any;
   name:string = '';
-  constructor(private user:UserService) { 
-  }
+  public val:any;
 
-  ngOnInit(): void {
-    console.log(this.user.users);
-    
-    
-  }
-}
+  constructor(private users:UserService,public route:Router) {}
+
+  ngOnInit() {
+    if (this.section == 'landing') {
+      this.route.navigate(['/'])
+      return
+    }
+    else{
+      this.user = this.users.users.find((e)=>{
+        return e.name == this.params
+       })
+       if (this.user === undefined ){
+        this.val = 'd-none'
+          this.route.navigate(['user/notfound'])
+          return
+       }
+      this.name = this.user.name
+       }
+      }
+    }
+
