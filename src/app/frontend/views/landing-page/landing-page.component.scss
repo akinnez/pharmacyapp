@@ -4,11 +4,13 @@ html,body{
 #roww{
     height: 500px ;
 }
-.manage{
-    width: 75%;
+.manage,.take-care{
+    width: 80%;
+    // border: 1px solid;
 }
 span{
   line-height: 30px;
+  text-overflow: clip;
 }
 .card{
   height: 400px;
@@ -26,6 +28,11 @@ span{
   margin: auto;
 }
 
+@media screen and (max-width:1200px) {
+//  .take-care{
+//   width: 100% !important;
+//  }
+}
 @media screen and (max-width:660px) {
   #roww{
     height: 100%;
