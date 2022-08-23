@@ -1,29 +1,32 @@
 <div class="table-responsive" *ngIf="condition">
     <table class="table text-center table-danger table-striped">
         <thead>
-        <th>S/No</th>
-        <th>Medicine Name</th>
-        <th>Company</th>
-        <th>Bar Code No</th>
-        <th>Quantities</th>
-        <th>Price (&#8358;)/1</th>
-        <th>Action</th>
+            <th>S/No</th>
+            <th>Company Name</th>
+            <th>Product Name</th>
+            <th>Item Code</th>
+            <th>Price(&#8358;)/1</th>
+            <th>Quantities Available</th>
+            <th>Expiry Date</th>
+            <th>Manufacture Date</th>
+            <th>Total Amount</th>
     </thead>
     <tbody>
         <tr *ngFor="let item of medlist; let i = index">
-            <td>
-                {{i+1}}
-            </td>
-            <td>{{item.name}}</td>
-            <td>{{item.companyName}}</td>
-            <td>{{item.itemCode}}</td>
-            <td>{{item.qtty}}</td>
-            <td>{{item.price | currency:'NGN':'&#8358;':'1.2-2'}}</td>
-            <td><button class="admin btn" (click)="openDialog(i)">
-                <mat-icon>
-                edit
+            <td>{{i+1}}</td>
+       <td>{{item.companyName}}</td>
+       <td>{{item.name}}</td>
+       <td>{{item.itemCode}}</td>
+       <td>{{item.price | currency:'NGN':'&#8358;':'1.2-2'}}</td>
+       <td>{{item.qtty}}</td>
+       <td>{{item.exp}}</td>
+       <td>{{item.mfd}}</td>
+       <td>{{item.price * item.qtty | currency:'NGN':'&#8358;':'1.2-2'}}</td>
+       <td><button class="admin btn" (click)="openDialog(i)">
+        <mat-icon>
+        edit
             </mat-icon>
-        </button></td>
+        </button></td>        
         </tr>
     </tbody>
     </table>

@@ -1,1 +1,85 @@
-<p>inventory works!</p>
+<!-- <p>inventory works</p> -->
+
+<div class="container-fluid">
+    <div>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="form">
+                    <h3 class="text-center"></h3>
+                    <form class="mx-auto" [formGroup]="form" style="width: 98%;">
+                        <div>
+                            <label for="search">Search for Products</label>
+                            <div class="frontend d-flex w-100">
+                              <input
+                              type="text"
+                              class="form-control border border-0"
+                              placeholder="Search for Product(s)"
+                              formControlName="search"
+                            />
+                            <app-button buttonSection="frontend" icon="search"(mclick)="navigate()" ></app-button>
+                            </div>
+
+                        </div>
+                    </form>
+                </div>
+                <div class="d-flex justify-content-center border my-3 pt-3">
+                    <div class="table-responsive text-center" style="width: 98%;" *ngIf="!cond">
+                        <table class="table w-100">
+                            <th>Name</th>
+                            <th>ProductId</th>
+                            <th>Price</th>
+                            <th>Action</th>
+    
+                            <tr *ngFor="let item of dataFilter;let i=index">
+                                <td>{{item.name}}</td>
+                                <td>{{item.itemCode}}</td>
+                                <td>{{item.price | currency:'NGN':'&#8358;':'1.2-2'}}</td>
+                                <td><button class="btn frontend btn-sm fw-bold" (click)="post(i)">Post</button></td>
+                            </tr>  
+                        </table>  
+                    </div>
+                    <div class="mb-5" *ngIf="cond">
+                        <h5>No Item(s) Found</h5>
+                     </div>
+                </div>
+            </div>
+            <div class="col-md-8">
+                <div class="my-3 table-responsive">
+                    <table class="table">
+                        <thead>
+                            <th>Name</th>
+                            <th>ProductId</th>
+                            <th>Category</th>
+                            <th>Price</th>
+                            <th>Quantity</th>
+                            <th>Total</th>
+                            <th>Action</th>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let data of datas;let i = index">
+                                <td>{{data.name}}</td>
+                                <td>{{data.itemCode}}</td>
+                                <td>{{data.category}}</td>
+                                <td>{{data.price | currency:'NGN':'&#8358;':'1.2-2'}}</td>
+                                <td>
+                                    <button class="btn frontend btn-sm fw-bold" (click)="dec(i)">-</button> 
+                                    <span> {{data.qtty}} </span> 
+                                    <button class="btn frontend btn-sm fw-bold" (click)="inc(i)">+</button>
+                                </td>
+                                <td>{{data.price * data.qtty | currency:'NGN':'&#8358;':'1.2-2'}}</td>
+                                <td><button class="btn frontend btn-sm fw-bold" (click)="del(i)">❌</button></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="text-end fw-bold">
+                    <span>Sum Total: {{num | currency:'NGN':'&#8358;':'1.2-2'}}</span>
+                   </div>
+                    <div class="my-3 d-flex justify-content-end borderCont">
+                        <app-button buttonSection="frontend" text="Pending" (mclick)="pending()" ></app-button>
+                        <app-button buttonSection="frontend" text="Print Payment" ></app-button>
+                    </div>
+            </div>
+        </div>
+    </div>
+</div>

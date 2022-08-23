@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { NavbarComponent } from './navbar.component';
 import { ButtonModule } from 'src/app/shared/button/button.module';
+import { MatIconModule } from '@angular/material/icon';
 
 
 
@@ -9,7 +10,8 @@ import { ButtonModule } from 'src/app/shared/button/button.module';
   declarations: [NavbarComponent],
   imports: [
     CommonModule,
-    ButtonModule
+    ButtonModule,
+    MatIconModule
   ],
   exports:[NavbarComponent]
 })

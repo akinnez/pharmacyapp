@@ -1,0 +1,9 @@
+td, td div{
+    padding: 1rem 0;
+}
+
+@media screen and (max-width:991px) {
+    table{
+        width: 1024px;
+    }
+}

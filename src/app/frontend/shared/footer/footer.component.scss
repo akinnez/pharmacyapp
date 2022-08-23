@@ -1,8 +1,26 @@
-li{
-    line-height: 40px;
-    text-align: center;
-}
 
+    li{
+        line-height: 40px;
+        text-align: center;
+    }
+   .li{
+    text-align: unset !important;
+    line-height: unset !important;
+   }
+.height{
+    height: 300px;
+}
 a li:hover{
     color: white !important;
+}
+
+@media screen and (max-width:991px) {
+    .height{
+        height: 100% !important;
+    }
+}
+@media screen and (max-width:600px) {
+    h1{
+        display: none;
+    }
 }

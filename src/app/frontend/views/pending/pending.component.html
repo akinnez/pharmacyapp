@@ -1,0 +1,57 @@
+<div class="container-fluid">
+    <div class="d-flex justify-content-end my-3">
+        <app-button buttonSection="frontend" text="Clear All" (mclick)="clear()"></app-button>
+    </div>
+    <div class="table-responsive">
+        <table class="table text-center table-striped table-danger" *ngIf="transactions !== null">
+            <thead>
+                <th>S/No</th>
+                <th>Transaction ID</th>
+                <th>Category</th>
+                <th>Product(s)</th>
+                <th>Price(s)</th>
+                <th>Quantities</th>
+                <th>Total(NGN)</th>
+                <th>Action</th>
+            </thead>
+            <tbody>
+                <tr *ngFor="let transact of transactions; let i = index">
+                    <td>{{i + 1}}</td>
+                    <td>{{transact.transactionId}}</td>
+                    <td>
+                        <div *ngFor="let products of transact.transaction">
+                            {{products.category}}
+                        </div> 
+                    </td>
+                    <td>
+                        <div *ngFor="let products of transact.transaction" class="fw-bold">
+                            {{products.name}}
+                        </div> 
+                    </td>
+                    <td>
+                        <div *ngFor="let products of transact.transaction">
+                            {{products.price | currency:'NGN':'&#8358;':'1.2-2'}}
+                        </div> 
+                    </td>
+                    <td>
+                        <div *ngFor="let products of transact.transaction">
+                            {{products.qtty}}
+                        </div> 
+                    </td> 
+                    <td>
+                        <div *ngFor="let products of transact.transaction">
+                            {{ products.sum | currency:'NGN':'&#8358;':'1.2-2'}}
+                        </div> 
+                    </td>
+                    <td>
+                        <app-button buttonSection="frontend" text="Continue" mclass="text-center" (mclick)="pay(i)"></app-button>
+                    </td>
+                </tr>
+            </tbody>
+          </table>
+    </div>
+    
+    <div *ngIf="transactions==null">
+        <h4>No pending transaction done yet</h4>
+    </div>
+</div>

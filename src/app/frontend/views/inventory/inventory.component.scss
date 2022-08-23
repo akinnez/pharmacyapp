@@ -1,0 +1,16 @@
+td{
+    padding: .56rem 0;
+}
+.col-md-4{
+    border-right: 1px solid #eee;
+}
+
+
+@media screen and (max-width: 768px) {
+    table.table{
+        width: 768px;
+    }
+    .borderCont{
+        justify-content: space-between !important;
+    }
+}

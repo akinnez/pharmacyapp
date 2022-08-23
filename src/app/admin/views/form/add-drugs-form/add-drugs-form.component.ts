@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
+import { PharmacyServiceService } from 'src/app/admin/services/pharmacyService/pharmacy-service.service';
 
 @Component({
   selector: 'add-drugs-form',
@@ -8,9 +9,8 @@ import { FormBuilder, FormGroup } from '@angular/forms';
 })
 export class AddDrugsFormComponent implements OnInit {
   form:FormGroup;
-  constructor(private fb:FormBuilder) { 
+  constructor(private fb:FormBuilder, private pharmacyService: PharmacyServiceService) { 
     this.form = this.fb.group({
-      src:[''],
       name:[''],
       companyName:[''],
       itemCode:[''],
@@ -26,6 +26,17 @@ export class AddDrugsFormComponent implements OnInit {
   ngOnInit(): void {
   }
 navigate(){
+  try {
+    this.pharmacyService.postDrugs(this.form.value).subscribe(
+      res =>{
+        console.log(res);
+      }
+    )
+  } catch (error) {
+    console.log(error);
+    
+  }
+  
 console.log(this.form.value)
 }
 }

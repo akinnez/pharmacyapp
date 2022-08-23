@@ -12,6 +12,11 @@ span{
   line-height: 30px;
   text-overflow: clip;
 }
+.nv{
+  position: sticky;
+  top: 0px;
+  z-index: 111;
+}
 .card{
   height: 400px;
   border-radius: 50px;

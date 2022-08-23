@@ -15,7 +15,7 @@ export interface IActivity{
     duration: number,
     lastSeen: number
   }
-  interface Logs{
+  interface ILogs{
     activity: string;
     logInTime: Date | number ;
     logOutTime:Date | number ;
@@ -31,22 +31,25 @@ export interface IActivity{
     transactionDate:Date | number;
     product:IProduct[];
   }
+export interface IUserData extends IUser{
+  logs: ILogs[];
+  transaction: ITransaction[];
+}
 export interface IUser{
     img:string,
     name: string,
     username:string,
     age:number,
     email:string,
-    phoneNo:number;
-    logs: [Logs];
-    transaction:ITransaction[]
+    phoneNo:number
 }
 export interface IProductlist {
   name: string,
   companyName:string,
   itemCode:number,
+  category?:string,
   qtty: number,
   price: number,
-  mfd:string,
-  exp:string
+  mfd:Date,
+  exp:Date
 }

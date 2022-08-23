@@ -10,13 +10,13 @@ import { UserService } from '../../services/userService/user.service';
 export class UserDetailsPageComponent implements OnInit {
 getParams:any;
 params:any;
-age: number;
-email: string;
-name: string;
-username: string;
-phoneNo: number;
+age: number = 0;
+email: string = '';
+name: string = '';
+username: string = '';
+phoneNo: number = 0;
 userInfo: any;
-img:string
+img:string = ''
 
 
 
@@ -24,16 +24,25 @@ img:string
    this.route.params.subscribe(params =>{
       this.params = params['name']
     })
-   this.userInfo =  this.user.users.find((e)=>{
-      return e.name === this.params
-    })
-    this.age = this.userInfo.age
-    this.email = this.userInfo.email
-    this.name = this.userInfo.name
-    this.username = this.userInfo.username
-    this.phoneNo = this.userInfo.phoneNo
-    this.img = this.userInfo.img
-   }
+
+    this.user.getData().subscribe(
+      res =>{
+        this.userInfo =  res.find((e:any)=>{
+          return e.fullname === this.params
+        })
+        console.log(this.params);
+        this.age = this.userInfo.age
+        this.email = this.userInfo.email
+        this.name = this.userInfo.fullname
+        this.username = this.userInfo.username
+        this.phoneNo = this.userInfo.phoneNumber
+        this.img = this.userInfo.image
+       
+      },
+      err => console.log(err)
+    )
+   
+    }
 
   ngOnInit(){
     console.log(this.params);

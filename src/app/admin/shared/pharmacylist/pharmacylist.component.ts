@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 import { PharmacyServiceService } from '../../services/pharmacyService/pharmacy-service.service';
 import { EditPharmacyComponent } from '../edit-pharmacy/edit-pharmacy.component';
@@ -8,16 +8,25 @@ import { EditPharmacyComponent } from '../edit-pharmacy/edit-pharmacy.component'
   templateUrl: './pharmacylist.component.html',
   styleUrls: ['./pharmacylist.component.scss']
 })
-export class PharmacylistComponent implements OnInit {
+export class PharmacylistComponent implements OnInit,OnDestroy {
   cond:boolean = false
-  condition:boolean = true
+  condition:boolean = true;
+  destroy:any;
 medlist:any
-imgPix = 25
   constructor(private medicinelist:PharmacyServiceService,public dialog:MatDialog) { }
 
   ngOnInit(): void {
-    this.medlist = this.medicinelist.medlist
-    this.checkActivities()
+    try {
+      this.destroy = this.medicinelist.getDrugs().subscribe(
+        res =>{
+          this.medlist = res;
+          this.checkActivities()
+        }
+      )
+    } catch (error) {
+      console.log(error);
+    }
+   
   }
 
 
@@ -37,5 +46,8 @@ imgPix = 25
       console.log(index);
   }
   
+  ngOnDestroy(): void {
+    this.destroy.unsubscribe()
+  }
 
 }

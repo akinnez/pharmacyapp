@@ -1,1 +1,48 @@
-<p>pharmacy works!</p>
+<div class="container-fluid">
+    <div class="d-flex justify-content-center">
+        <div class="col-md-5 my-5">
+            <form action="" [formGroup]="formdata" class="d-flex">
+              <div class="frontend d-flex w-100">
+                <input
+                type="text"
+                class="form-control border border-0"
+                placeholder="Search for Drugs"
+                formControlName="search"
+              />
+              <app-button buttonSection="frontend" icon="search"(mclick)="navigate()" ></app-button>
+              </div>
+            </form>
+          </div>
+    </div>
+ <div class="table-responsive mb-5" *ngIf="!cond">
+  <table class="table table-danger text-center" >
+    <thead>
+      <th>S/No</th>
+      <th>Company Name</th>
+      <th>Product Name</th>
+      <th>Item Code</th>
+      <th>Price</th>
+      <th>Quantities Available</th>
+      <th>Expiry Date</th>
+      <th>Manufacture Date</th>
+      <th>Total Amount</th>
+    </thead>
+    <tbody>
+      <tr *ngFor="let element of dataFilter,let i=index">
+       <td>{{i+1}}</td>
+       <td>{{element.companyName}}</td>
+       <td>{{element.name}}</td>
+       <td>{{element.itemCode}}</td>
+       <td>{{element.price}}</td>
+       <td>{{element.qtty}}</td>
+       <td>{{element.exp}}</td>
+       <td>{{element.mfd}}</td>
+       <td>{{element.price * element.qtty}}</td>
+      </tr>
+    </tbody>
+  </table>
+ </div>
+ <div class="mb-5" *ngIf="cond">
+    <h1>No Item(s) Found</h1>
+ </div>
+</div>

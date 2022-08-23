@@ -1,7 +1,9 @@
 <div  *ngIf="section =='landing'">
-  <nav class="navbar navbar-expand-lg">
+  <nav class="navbar navbar-expand-lg bg-warning">
    <div class="container-fluid">
-    <a class="navbar-brand" href="/">Navbar</a>
+    <a class="navbar-brand" href="/">
+      <h1 class="fs-1 fw-bold">P<sub>H</sub><sup><mat-icon>eco</mat-icon></sup></h1>
+    </a>
     <div class="sign-in">
       <a href="/form/login">
         <app-button buttonSection="frontend" text="Sign In"></app-button>
@@ -12,9 +14,11 @@
 </div>
 
 <div  *ngIf="section == 'home'" class="{{val}}">
-  <nav class="navbar navbar-expand-lg">
+  <nav class="navbar navbar-expand-lg bg-warning">
     <div class="container-fluid m-0">
-      <a class="navbar-brand" href="/user/{{params}}">Navbar</a>
+      <a class="navbar-brand" href="/user/{{params}}">
+        <h1 class="fs-1 fw-bold">P<sub>H</sub><sup><mat-icon>eco</mat-icon></sup></h1>
+      </a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -27,21 +31,16 @@
               <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                 Store
               </a>
-              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <ul class="dropdown-menu bg-warning" aria-labelledby="navbarDropdown">
                 <li><a class="dropdown-item" href="user/{{params}}/store/pharmacy">Pharmacy</a></li>
                 <hr class="dropdown-divider">
                 <li><a class="dropdown-item" href="user/{{params}}/store/supermarket">Supermarket</a></li>
               </ul>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="user/{{params}}/inventory">Inventory</a>
+              <a class="nav-link" href="user/{{params}}/inventory-sales">Inventory</a>
           </li>
         </ul>   
-          <!-- <div class="sign-in">
-            <a href="/form/login">
-              <app-button buttonSection="frontend" text="Sign In"></app-button>
-            </a>
-        </div> -->
         <div>
         <span>Welcome, {{name}}</span>  
         </div>

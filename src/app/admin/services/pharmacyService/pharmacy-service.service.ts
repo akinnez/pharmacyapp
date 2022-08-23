@@ -1,29 +1,21 @@
 import { Injectable } from '@angular/core';
+import { ApiService } from 'src/app/shared/api.service';
+import { environment } from 'src/environments/environment';
 import { IProductlist } from '../../interface/admin.interface';
 
 @Injectable({
   providedIn: 'root'
 })
 export class PharmacyServiceService {
-medlist:IProductlist[] = [
-  {
-    name: '',
-    companyName:'',
-    itemCode: 10,
-    qtty:10,
-    price: 0,
-    mfd: '',
-    exp: ''
-  },
-  {
-    name: 'bolaji johnson',
-    companyName:'bolajijohnson Inc.',
-    itemCode: 100,
-    qtty:100,
-    price: 10000,
-    mfd: '',
-    exp: ''
+medlist:IProductlist[] = []
+
+  constructor(public api: ApiService) { }
+
+  getDrugs(){
+    return this.api.get(environment.url + 'pharmacy')
   }
-]
-  constructor() { }
+  postDrugs(data:object){
+    return this.api.post(environment.url + 'pharmacy', data)
+  }
+
 }

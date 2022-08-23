@@ -1,0 +1,11 @@
+th,td{
+    padding: 20px 0;
+  }
+table{
+    width: 100%;
+}
+@media screen and (max-width: 991px) {
+    table{
+        width: 1024px;
+    }
+}

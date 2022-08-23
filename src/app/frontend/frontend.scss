@@ -4,17 +4,31 @@ $text-color: #502F4C;
     border: 2px solid $text-color !important;
 }
 h1,h2,h3,h4,h5,h6,ul,li,label,p,a,span{
-    color: $text-color !important
+    color: $text-color !important;
 }
 button.frontend{
     color: $text-color !important;
-    border: 2px solid $text-color !important;
+    border: transparent !important;
 }
 button.frontend:hover{
     background-color: $text-color;
     color: white !important;
 }
+div.frontend{
+  border: 2.75px solid $text-color !important;
+  color: $text-color !important;
+}
+nav.inventory{
+   li a{
+      border-bottom: 1px dotted $text-color !important;
+   }
+}
 
+@media screen and (max-width: 768px) {
+.borderCont{
+  border: 2px solid $text-color;
+}
+}
 ::-webkit-scrollbar{
     width: 10px !important;
   }
@@ -22,5 +36,6 @@ button.frontend:hover{
     background: linear-gradient($text-color,--color) !important;
   }
   ::-webkit-scrollbar-thumb:hover{
+    display: block;
     background: linear-gradient(gold,$text-color) !important;
   }

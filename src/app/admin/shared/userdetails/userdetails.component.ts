@@ -25,7 +25,7 @@ openDialog(){
   const dialogConfig = new MatDialogConfig();
     dialogConfig.autoFocus = true
      this.dialog.open(DeleteNotificationComponent,{
-      data: { id: Number(this.id),name:this.name },
+      data: {id: Number(this.id), name:this.name },
      });
 }
 

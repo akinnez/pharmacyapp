@@ -14,7 +14,7 @@
     </div>
     <div>
       <a mat-list-item class="mt-4 " routerLink="/admin/{{item.link}}" 
-        *ngFor="let item of sidelist" title="{{item.text}}">
+        *ngFor="let item of sidelist" title="{{item.text}}" (click)="sideBarToggle()">
           <small class="d-inline mx-auto">
             <mat-icon>{{item.icon}}</mat-icon>
             <span class="ps-3 text-white {{appy}} fw-bold" [style.letterSpacing.px]="val" >{{item.text}}</span>

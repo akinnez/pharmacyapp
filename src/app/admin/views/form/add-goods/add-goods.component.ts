@@ -10,7 +10,6 @@ export class AddGoodsFormComponent implements OnInit {
   form:FormGroup;
   constructor(private fb:FormBuilder) { 
     this.form = this.fb.group({
-      src:[''],
       name:[''],
       companyName:[''],
       itemCode:[''],

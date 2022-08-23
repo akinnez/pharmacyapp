@@ -22,8 +22,15 @@ export class UserComponent implements OnInit {
   }) 
 
   ngOnInit(): void {
-    this.user = this.users.users
-    this.checkActivities()
+    this.users.getData().subscribe(
+      res => {
+        this.user = res;
+        this.checkActivities()
+      },
+      err => console.log(err)
+  );
+    
+    
   }
 
   checkActivities(){

@@ -14,16 +14,14 @@ const routes: Routes = [
       {
         path:'store', loadChildren:()=>import ('../store/store.module').then(e=>e.StoreModule)
       },
-      {
-        path:'inventory',
-        loadChildren:()=>import ('../inventory/inventory.module').then(n=>n.InventoryModule)
-      },
+      { path: 'inventory-sales', loadChildren: () => import('../inventory-sales/inventory-sales.module').then(m => m.InventorySalesModule) },
       {
         path:'notfound',
-       component:NotfoundComponent
+        component:NotfoundComponent
       }
     ]
-  }
+  },
+ 
 ];
 
 @NgModule({

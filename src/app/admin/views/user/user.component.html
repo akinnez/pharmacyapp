@@ -8,7 +8,7 @@
                     <input
                     type="text"
                     class="form-control border border-0"
-                    placeholder="Search for Drugs"
+                    placeholder="Search for User(s)"
                     formControlName="search"
                   />
                   <app-button buttonSection="admin" icon="search"></app-button>
@@ -29,10 +29,10 @@
         
         <div *ngFor="let item of user,let i=index" class="col-sm-6 col-md-4 col-lg-3">
             <app-userdetails
-                img = "{{item.img}}"
-                name="{{item.name}}"
+                img = "{{item.image}}"
+                name="{{item.fullname}}"
                 email="{{item.email}}"
-                phoneNo="{{item.phoneNo}}"
+                phoneNo="{{item.phoneNumber}}"
                 id = "{{i}}"
             ></app-userdetails>
         </div>

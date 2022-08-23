@@ -15,7 +15,6 @@ private get:any
     this.get = this.route.params.subscribe(params =>{
       this.params = params['name']
     })
-    console.log(this.params);
     
   }
   ngOnDestroy() {

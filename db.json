@@ -1,0 +1,65 @@
+{
+  "pharmacy": [
+    {
+      "name": "bonababe",
+      "companyName": "Tuyil pharmaceuticals",
+      "itemCode": 9867398927,
+      "qtty": 100,
+      "price": 300,
+      "mfd": "2022-08-08",
+      "exp": "2023-08-16",
+      "id": 1
+    }
+  ],
+  "supermarket": [
+    {
+      "name": "bonababe-baby",
+      "companyName": "Tuyil pharmaceuticals",
+      "itemCode": 9867398927,
+      "qtty": 100,
+      "price": 300,
+      "mfd": "2022-08-08",
+      "exp": "2023-08-16",
+      "id": 1
+    }
+  ],
+  "users": [
+    {
+      "fullname": "ek",
+      "email": "timialamu@gmail.com",
+      "phoneNumber": "8135468290",
+      "image": "R.jfif",
+      "username": "alamu",
+      "age": 32,
+      "password": "timialamu",
+      "id": 1
+    },
+    {
+      "fullname": "ekunbayo olonginidide",
+      "email": "hggnheja@gmail.com",
+      "phoneNumber": "8135468290",
+      "image": "R.jfif",
+      "username": "babaaje",
+      "age": 42,
+      "password": "qwerty1234567890",
+      "id": 2
+    },
+    {
+      "fullname": "ekunbayo olonginidide",
+      "email": "hggnheja@gmail.com",
+      "phoneNumber": "8135468290",
+      "image": "R.jfif",
+      "username": "babaaje",
+      "age": 42,
+      "password": "qwerty1234567890",
+      "id": 3
+    }
+  ],
+  "admins": [
+    {
+      "username": "fattyacid",
+      "email": "fatimatolaojo@gmail.com",
+      "password": "fatimatolaojo45"
+    }
+  ]
+}

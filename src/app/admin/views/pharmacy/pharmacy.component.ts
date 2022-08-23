@@ -17,7 +17,6 @@ formdata:FormGroup = this.fb.group({
   ngOnInit(): void {
   }
   openDialog(){
-    console.log('working');
     const dialogConfig = new MatDialogConfig();
     dialogConfig.autoFocus = true
     dialogConfig.disableClose = true
