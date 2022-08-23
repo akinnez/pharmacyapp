@@ -84,17 +84,17 @@ public users:IUser[] = [
 constructor(private apiService: ApiService) {  }
 
  postData(data:object){
-  return this.apiService.post(environment.url + this.route, data)
+  return this.apiService.post(this.apiService.url + this.route, data)
 }
 
 getData(){
-  return this.apiService.get(environment.url + this.route)
+  return this.apiService.get(this.apiService.url + this.route)
 }
 getAdminData(){
-  return this.apiService.get(environment.url + 'admins')
+  return this.apiService.get(this.apiService.url + 'admins')
 }
 deleteUser(i:number){
-  return this.apiService.delete(environment.url + this.route + `/${i}`,)
+  return this.apiService.delete(this.apiService.url + this.route + `/${i}`,)
 }
 
 }

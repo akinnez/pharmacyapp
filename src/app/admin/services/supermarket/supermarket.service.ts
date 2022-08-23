@@ -11,6 +11,6 @@ superlist:IProductlist[] = []
   constructor(private api:ApiService) { }
 
   getSuper(){
-    return this.api.get(environment.url + 'supermarket')
+    return this.api.get(this.api.url + 'supermarket')
   }
 }

@@ -12,10 +12,10 @@ medlist:IProductlist[] = []
   constructor(public api: ApiService) { }
 
   getDrugs(){
-    return this.api.get(environment.url + 'pharmacy')
+    return this.api.get(this.api.url + 'pharmacy')
   }
   postDrugs(data:object){
-    return this.api.post(environment.url + 'pharmacy', data)
+    return this.api.post(this.api.url + 'pharmacy', data)
   }
 
 }
