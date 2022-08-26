@@ -32,7 +32,221 @@
       "username": "alamu",
       "age": 32,
       "password": "timialamu",
-      "id": 1
+      "id": 1,
+      "transactions": [
+        {
+          "transactionId": 367081644,
+          "date": "25/08/2022",
+          "time": "12:42:35",
+          "transaction": [
+            {
+              "name": "bonababe",
+              "companyName": "Tuyil pharmaceuticals",
+              "itemCode": 9867398927,
+              "qtty": 3,
+              "price": 300,
+              "mfd": "2022-08-08",
+              "exp": "2023-08-16",
+              "id": 1,
+              "category": "pharmacy",
+              "sum": 900
+            }
+          ],
+          "total": 900
+        },
+        {
+          "transactionId": 105871495,
+          "date": "25/08/2022",
+          "time": "12:43:02",
+          "transaction": [
+            {
+              "name": "bonababe",
+              "companyName": "Tuyil pharmaceuticals",
+              "itemCode": 9867398927,
+              "qtty": 2,
+              "price": 300,
+              "mfd": "2022-08-08",
+              "exp": "2023-08-16",
+              "id": 1,
+              "category": "pharmacy",
+              "sum": 600
+            },
+            {
+              "name": "bonababe-baby",
+              "companyName": "Tuyil pharmaceuticals",
+              "itemCode": 9867398927,
+              "qtty": 2,
+              "price": 300,
+              "mfd": "2022-08-08",
+              "exp": "2023-08-16",
+              "id": 1,
+              "category": "supermarket",
+              "sum": 600
+            },
+            {
+              "name": "bonababe",
+              "companyName": "Tuyil pharmaceuticals",
+              "itemCode": 9867398927,
+              "qtty": 2,
+              "price": 300,
+              "mfd": "2022-08-08",
+              "exp": "2023-08-16",
+              "id": 1,
+              "category": "pharmacy",
+              "sum": 600
+            }
+          ],
+          "total": 2100
+        },
+        {
+          "transactionId": 711126797,
+          "date": "25/08/2022",
+          "time": "12:43:50",
+          "transaction": [
+            {
+              "name": "bonababe-baby",
+              "companyName": "Tuyil pharmaceuticals",
+              "itemCode": 9867398927,
+              "qtty": 2,
+              "price": 300,
+              "mfd": "2022-08-08",
+              "exp": "2023-08-16",
+              "id": 1,
+              "category": "supermarket",
+              "sum": 600
+            }
+          ],
+          "total": 600
+        },
+        {
+          "transactionId": 206969452,
+          "date": "25/08/2022",
+          "time": "12:44:33",
+          "transaction": [
+            {
+              "name": "bonababe-baby",
+              "companyName": "Tuyil pharmaceuticals",
+              "itemCode": 9867398927,
+              "qtty": 1,
+              "price": 300,
+              "mfd": "2022-08-08",
+              "exp": "2023-08-16",
+              "id": 1,
+              "category": "supermarket"
+            }
+          ],
+          "total": 0
+        },
+        {
+          "transactionId": 551354654,
+          "date": "25/08/2022",
+          "time": "12:44:52",
+          "transaction": [
+            {
+              "name": "bonababe-baby",
+              "companyName": "Tuyil pharmaceuticals",
+              "itemCode": 9867398927,
+              "qtty": 1,
+              "price": 300,
+              "mfd": "2022-08-08",
+              "exp": "2023-08-16",
+              "id": 1,
+              "category": "supermarket"
+            }
+          ],
+          "total": 0
+        },
+        {
+          "transactionId": 565293688,
+          "date": "25/08/2022",
+          "time": "12:45:02",
+          "transaction": [
+            {
+              "name": "bonababe-baby",
+              "companyName": "Tuyil pharmaceuticals",
+              "itemCode": 9867398927,
+              "qtty": 1,
+              "price": 300,
+              "mfd": "2022-08-08",
+              "exp": "2023-08-16",
+              "id": 1,
+              "category": "supermarket"
+            }
+          ],
+          "total": 0
+        },
+        {
+          "transactionId": 186995172,
+          "date": "25/08/2022",
+          "time": "12:45:22",
+          "transaction": [
+            {
+              "name": "bonababe-baby",
+              "companyName": "Tuyil pharmaceuticals",
+              "itemCode": 9867398927,
+              "qtty": 2,
+              "price": 300,
+              "mfd": "2022-08-08",
+              "exp": "2023-08-16",
+              "id": 1,
+              "category": "supermarket",
+              "sum": 600
+            },
+            {
+              "name": "bonababe",
+              "companyName": "Tuyil pharmaceuticals",
+              "itemCode": 9867398927,
+              "qtty": 2,
+              "price": 300,
+              "mfd": "2022-08-08",
+              "exp": "2023-08-16",
+              "id": 1,
+              "category": "pharmacy",
+              "sum": 600
+            }
+          ],
+          "total": 1200
+        },
+        {
+          "transactionId": 169218111,
+          "date": "25/08/2022",
+          "time": "16:50:36",
+          "transaction": [],
+          "total": 0
+        },
+        {
+          "transactionId": 747908949,
+          "date": "25/08/2022",
+          "time": "20:33:36",
+          "transaction": [
+            {
+              "name": "bonababe",
+              "companyName": "Tuyil pharmaceuticals",
+              "itemCode": 9867398927,
+              "qtty": 3,
+              "price": 300,
+              "mfd": "2022-08-08",
+              "exp": "2023-08-16",
+              "id": 1,
+              "category": "pharmacy",
+              "sum": 900
+            },
+            {
+              "name": "bonababe-baby",
+              "companyName": "Tuyil pharmaceuticals",
+              "itemCode": 9867398927,
+              "qtty": 3,
+              "price": 300,
+              "mfd": "2022-08-08",
+              "exp": "2023-08-16",
+              "id": 1,
+              "category": "supermarket",
+              "sum": 900
+            }
+          ],
+          "total": 1800
+        }
+      ]
     },
     {
       "fullname": "ekunbayo olonginidide",
@@ -60,6 +274,11 @@
       "username": "fattyacid",
       "email": "fatimatolaojo@gmail.com",
       "password": "fatimatolaojo45"
+    },
+    {
+      "username": "admin",
+      "email": "admin@pharmatech.com",
+      "password": "admin1234567890"
     }
   ]
 }

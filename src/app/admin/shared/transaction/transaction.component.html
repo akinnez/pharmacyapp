@@ -1,50 +1,69 @@
-<div *ngIf="transactions !== []" class="table-responsive">
+<div class="container-fluid my-3">
+    <form action="" [formGroup]="form">
+        <div class="d-flex justify-content-end">
+           <div>
+            <span class="d-block fw-bold">Filter By</span>
+            <input type="date" (change)="pickDate()"  value="{{value}}" formControlName="date" style="border: none !important;outline:none">
+           </div>
+        </div>
+    </form>
+</div>
+<div *ngIf="!cond" class="table-responsive">
     <table class="table text-center table-striped table-danger">
         <thead>
-            <th>S/No</th>
             <th>Transaction ID</th>
             <th>Date</th>
+            <th>Time</th>
             <th>Category</th>
             <th>Product(s)</th>
             <th>Price(s)</th>
             <th>Quantities</th>
             <th>Total(NGN)</th>
+            <th>Total Price(NGN)</th>
         </thead>
         <tbody>
-            <tr *ngFor="let transaction of transactions; let i = index">
-                <td>{{i + 1}}</td>
-                <td>{{transaction.transactionId}}</td>
-                <td>{{transaction.transactionDate}}</td>
+            <tr *ngFor="let item of pageSlice; let i = index">
+                <td>{{item.transactionId}}</td>
+                <td>{{item.date}}</td>
+                <td>{{item.time}}</td>
                 <td>
-                    <div *ngFor="let products of transaction.product">
+                    <div *ngFor="let products of item.transaction">
                         {{products.category}}
                     </div> 
                 </td>
                 <td>
-                    <div *ngFor="let products of transaction.product" class="fw-bold">
+                    <div *ngFor="let products of item.transaction" class="fw-bold">
                         {{products.name}}
                     </div> 
                 </td>
                 <td>
-                    <div *ngFor="let products of transaction.product">
+                    <div *ngFor="let products of item.transaction">
                         {{products.price | currency:'NGN':'&#8358;':'1.2-2'}}
                     </div> 
                 </td>
                 <td>
-                    <div *ngFor="let products of transaction.product">
+                    <div *ngFor="let products of item.transaction">
                         {{products.qtty}}
                     </div> 
                 </td> 
                 <td>
-                    <div *ngFor="let products of transaction.product">
+                    <div *ngFor="let products of item.transaction">
                         {{products.qtty * products.price | currency:'NGN':'&#8358;':'1.2-2'}}
                     </div> 
                 </td>
+                <td>{{item.total | currency:'NGN':'&#8358;':'1.2-2'}} </td>
             </tr>
         </tbody>
       </table>
-</div>
+    </div>
+<mat-paginator [length]="this.transacts.length"
+              [pageSize]="5"
+              [pageSizeOptions]="[5, 10]"
+              (page)="onPageChange($event)">
+</mat-paginator>
 
-<div *ngIf="transactions == []">
+
+
+<div *ngIf="cond">
     <h4>No transaction done yet</h4>
 </div>

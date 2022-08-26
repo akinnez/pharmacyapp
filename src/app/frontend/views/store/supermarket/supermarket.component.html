@@ -1,1 +1,61 @@
-<p>supermarket works!</p>
+<div class="container-fluid">
+  <div class="d-flex justify-content-center">
+    <div class="col-md-5 my-5">
+      <form action="" [formGroup]="formdata" class="d-flex">
+        <div class="frontend d-flex w-100">
+          <input
+            type="text"
+            class="form-control border border-0"
+            placeholder="Search for Drugs"
+            formControlName="search"
+          />
+          <app-button
+            buttonSection="frontend"
+            icon="search"
+            (mclick)="navigate()"
+          ></app-button>
+        </div>
+      </form>
+    </div>
+  </div>
+  <div class="table-responsive mb-5" *ngIf="!cond">
+    <table class="table table-striped text-center">
+      <thead>
+        <th>Company Name</th>
+        <th>Product Name</th>
+        <th>Item Code</th>
+        <th>Price</th>
+        <th>Quantities Available</th>
+        <th>Expiry Date</th>
+        <th>Manufacture Date</th>
+        <th>Total Amount</th>
+      </thead>
+      <tbody>
+        <tr *ngFor="let element of pageSlice; let i = index">
+          <td>{{ element.companyName }}</td>
+          <td>{{ element.name }}</td>
+          <td>{{ element.itemCode }}</td>
+          <td>{{ element.price | currency: "NGN":"&#8358;":"1.2-2" }}</td>
+          <td>{{ element.qtty }}</td>
+          <td>{{ element.exp }}</td>
+          <td>{{ element.mfd }}</td>
+          <td>
+            {{
+              element.price * element.qtty | currency: "NGN":"&#8358;":"1.2-2"
+            }}
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <mat-paginator
+    [length]="this.dataFilter.length"
+    [pageSize]="10"
+    [pageSizeOptions]="[10, 20, 50, 100]"
+    (page)="onPageChange($event)"
+  >
+  </mat-paginator>
+  <div class="mb-5" *ngIf="cond">
+    <h1>No Item(s) Found</h1>
+  </div>
+</div>

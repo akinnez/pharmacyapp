@@ -8,7 +8,7 @@ import { Component, Input, OnInit } from '@angular/core';
 export class LandingPageComponent implements OnInit {
 @Input() section:string = 'landing'
 @Input() params:string = ''
-  constructor() { }
+  constructor() {}
 
   ngOnInit(): void {
   }

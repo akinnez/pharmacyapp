@@ -93,8 +93,11 @@ getData(){
 getAdminData(){
   return this.apiService.get(this.apiService.url + 'admins')
 }
+patchData(i:number,data:any){
+
+  return this.apiService.patch(this.apiService.url + this.route + `/${i}`, data)
+}
 deleteUser(i:number){
   return this.apiService.delete(this.apiService.url + this.route + `/${i}`,)
 }
-
 }

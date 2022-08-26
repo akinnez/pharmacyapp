@@ -7,7 +7,7 @@ import { DefaultModule } from './views/default/default.module';
 
 @NgModule({
   declarations: [
-    FrontendComponent,
+    FrontendComponent
   ],
   imports: [
     CommonModule,

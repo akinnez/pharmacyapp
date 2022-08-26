@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { SupermarketlistComponent } from './supermarketlist.component';
 import { MatIconModule } from '@angular/material/icon';
 import { MatDialogModule } from '@angular/material/dialog';
+import { MatPaginatorModule } from '@angular/material/paginator';
 
 
 
@@ -13,7 +14,8 @@ import { MatDialogModule } from '@angular/material/dialog';
   imports: [
     CommonModule,
     MatIconModule,
-    MatDialogModule
+    MatDialogModule,
+    MatPaginatorModule
   ],
   exports:[SupermarketlistComponent]
 })

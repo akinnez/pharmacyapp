@@ -1,11 +1,13 @@
 import { Location } from '@angular/common';
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
+import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 import { Router,ActivatedRoute } from '@angular/router';
 import { IProductlist } from 'src/app/admin/interface/admin.interface';
 import { PharmacyServiceService } from 'src/app/admin/services/pharmacyService/pharmacy-service.service';
 import { SupermarketService } from 'src/app/admin/services/supermarket/supermarket.service';
 import { UserService } from 'src/app/admin/services/userService/user.service';
+import { NotificationComponent } from '../../shared/notification/notification.component';
 
 @Component({
   selector: 'app-inventory',
@@ -34,6 +36,7 @@ export class InventoryComponent implements OnInit,OnDestroy{
     private route: ActivatedRoute,
     private router: Router,
     private location:Location,
+    public dialog:MatDialog
     ) { }
 
   form = this.fb.group({
@@ -48,7 +51,7 @@ export class InventoryComponent implements OnInit,OnDestroy{
           this.sumTotal[i] = e.sum
          this.reduce()
       })
-      // this.data =[]
+  
     }
 
       try {
@@ -78,7 +81,7 @@ export class InventoryComponent implements OnInit,OnDestroy{
   navigate(){
     if(this.form.invalid)return
     this.dataFilter = this.productArr
-  this.searchValue = (this.form.value.search).trim()
+  this.searchValue = (this.form.value.search).trim().toLowerCase()
     this.datFilter = this.dataFilter.filter((e:any)=>{
       return (
         e.name.toLowerCase().includes(this.searchValue)||
@@ -115,7 +118,23 @@ export class InventoryComponent implements OnInit,OnDestroy{
 }
 
   makePayment(){
-    console.log(this.data);
+    if (this.datas.length == 0) {
+      return
+    }
+    this.data = {
+      transactionId:Math.floor(Math.random() * 1000000000),
+      date: new Date().toLocaleDateString(),
+      time: new Date().toLocaleTimeString(),
+      transaction:this.datas,
+      total: this.num
+    }
+
+      const dialogConfig = new MatDialogConfig();
+      dialogConfig.autoFocus = true
+      dialogConfig.disableClose = true
+       this.dialog.open(NotificationComponent,{
+        data:[this.data,this.num]
+       });
   }
   pending(){
     if (this.datas.length == 0) {

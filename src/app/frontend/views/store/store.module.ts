@@ -7,6 +7,7 @@ import { SupermarketComponent } from './supermarket/supermarket.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { ButtonModule } from 'src/app/shared/button/button.module';
 import { InputModule } from 'src/app/shared/input/input.module';
+import { MatPaginatorModule } from '@angular/material/paginator';
 
 
 @NgModule({
@@ -19,7 +20,8 @@ import { InputModule } from 'src/app/shared/input/input.module';
     StoreRoutingModule,
     ReactiveFormsModule,
     ButtonModule,
-    InputModule
+    InputModule,
+    MatPaginatorModule
   ]
 })
 export class StoreModule { }

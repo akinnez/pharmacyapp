@@ -1,3 +1,5 @@
+import { Time, DatePipe } from "@angular/common";
+
 export interface IData{
     label: string,
     data: number[],
@@ -28,8 +30,10 @@ export interface IActivity{
   }
   export interface ITransaction{
     transactionId:number;
-    transactionDate:Date | number;
-    product:IProduct[];
+    date:DatePipe;
+    time:Time;
+    total:number;
+    transaction:IProduct[];
   }
 export interface IUserData extends IUser{
   logs: ILogs[];

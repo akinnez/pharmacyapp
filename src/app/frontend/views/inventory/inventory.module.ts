@@ -5,7 +5,8 @@ import { InventoryRoutingModule } from './inventory-routing.module';
 import { InventoryComponent } from './inventory.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { ButtonModule } from 'src/app/shared/button/button.module';
-import { NavbarModule } from '../../shared/navbar/navbar.module';
+import { MatDialogModule } from '@angular/material/dialog';
+import { NotificationModule } from '../../shared/notification/notification.module';
 
 
 @NgModule({
@@ -16,7 +17,10 @@ import { NavbarModule } from '../../shared/navbar/navbar.module';
     CommonModule,
     InventoryRoutingModule,
     ReactiveFormsModule,
-    ButtonModule
+    ButtonModule,
+    MatDialogModule,
+    NotificationModule
+   
   ]
 })
 export class InventoryModule { }

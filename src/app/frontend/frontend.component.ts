@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-frontend',
-  templateUrl: './frontend.component.html',
+  template: `<router-outlet></router-outlet>`,
   styleUrls: ['./frontend.scss']
 })
 export class FrontendComponent implements OnInit {

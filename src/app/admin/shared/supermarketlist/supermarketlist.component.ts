@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 import { SupermarketService } from '../../services/supermarket/supermarket.service';
 import { EditSupermarketComponent } from '../edit-supermarket/edit-supermarket.component';
@@ -8,16 +8,28 @@ import { EditSupermarketComponent } from '../edit-supermarket/edit-supermarket.c
   templateUrl: './supermarketlist.component.html',
   styleUrls: ['./supermarketlist.component.scss']
 })
-export class SupermarketlistComponent implements OnInit {
+export class SupermarketlistComponent implements OnInit,OnDestroy {
   cond:boolean = false
   condition:boolean = true
-superlist:any
-imgPix = 25
+  superlist:any;
+  destroy:any
+  startIndex:any;
+  endIndex:any;
+  pageSlice:any;
   constructor(private supermarketlist:SupermarketService,public dialog:MatDialog) { }
 
   ngOnInit(): void {
-    this.superlist = this.supermarketlist.superlist
-    this.checkActivities()
+      try {
+      this.destroy = this.supermarketlist.getSuper().subscribe(
+          res => {
+            this.superlist = res;
+            this.pageSlice = (this.superlist.slice(0, 10));
+            this.checkActivities()
+          }
+        )
+      } catch (error) {
+        console.log(error);
+      }
   }
 
 
@@ -33,6 +45,16 @@ imgPix = 25
     dialogConfig.disableClose = true
     dialogConfig.data = this.supermarketlist.superlist[index]
      this.dialog.open(EditSupermarketComponent, dialogConfig);
-      console.log(index);
   }
+
+  onPageChange(event:any){
+    this.startIndex = event.pageIndex * event.pageSize;
+    this.endIndex = this.startIndex + event.pageSize
+    this.pageSlice = this.superlist.slice(this.startIndex,this.endIndex);
+    (this.endIndex > this.superlist.length ? this.endIndex = this.superlist.length : this.pageSlice = this.superlist.slice(this.startIndex,this.endIndex));
+}
+ngOnDestroy(){
+  this.destroy.unsubscribe()
+}
+
 }

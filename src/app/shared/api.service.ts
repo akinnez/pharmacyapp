@@ -15,7 +15,7 @@ export class ApiService {
   }
   constructor(public https: HttpClient) {}
   private logRoutes(
-    method: 'get' | 'post' | 'put' | 'delete',
+    method: 'get' | 'post' | 'put' |'patch' | 'delete',
     route:any,
     ...extras:any[]
   ) {
@@ -51,6 +51,16 @@ export class ApiService {
 
   put(route: string, body:any) {
     return this.https.put(route, body, {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json',
+        // 'x-auth': this.esl.evt.token,
+      }),
+      observe:'body',
+      responseType: 'json',
+    });
+  }
+  patch(route: string, body:any) {
+    return this.https.patch(route, body, {
       headers: new HttpHeaders({
         'Content-Type': 'application/json',
         // 'x-auth': this.esl.evt.token,

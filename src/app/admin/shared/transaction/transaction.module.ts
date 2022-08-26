@@ -1,7 +1,8 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { CommonModule, DatePipe } from '@angular/common';
 import { TransactionComponent } from './transaction.component';
-
+import { ReactiveFormsModule } from '@angular/forms';
+import {MatPaginatorModule} from '@angular/material/paginator';
 
 
 @NgModule({
@@ -9,8 +10,12 @@ import { TransactionComponent } from './transaction.component';
     TransactionComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    ReactiveFormsModule,
+    MatPaginatorModule
   ],
+  providers:[DatePipe]
+  ,
   exports:[TransactionComponent]
 })
 export class TransactionModule { }

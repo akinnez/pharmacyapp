@@ -6,11 +6,17 @@ import { ActivatedRoute } from '@angular/router';
   templateUrl: './homepage.component.html',
   styleUrls: ['./homepage.component.scss']
 })
-export class HomepageComponent implements OnInit {
+export class HomepageComponent implements OnInit,OnDestroy {
   params:any;
-  private get:any
-    constructor() { }
-  
-    ngOnInit() {}
+  get:any
+  constructor(private route:ActivatedRoute) { }
 
+  ngOnInit() {
+    this.get = this.route.params.subscribe(params =>{
+      this.params = params['name']
+    })
+  }
+  ngOnDestroy() {
+    this.get.unsubscribe()
+  }
 }

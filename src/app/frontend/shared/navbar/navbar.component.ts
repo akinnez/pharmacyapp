@@ -23,23 +23,27 @@ export class NavbarComponent implements OnInit,OnDestroy {
       return
     }
     else{
-    this.destroy =  this.users.getData().subscribe(
-        res =>{    
-          this.user = res.find((e:any)=>{
-            return e.fullname == this.params
-           })
-           if (this.user === undefined ){
-            this.val = 'd-none'
-              this.route.navigate(['/**'])
-              return
-           }
-            this.name = this.user.fullname
-           },
-        err =>{ this.route.navigate(['/**'])}
-         )
-     
-          }
+      try {
+      this.destroy =  this.users.getData().subscribe(
+          res =>{    
+            this.user = res.find((e:any)=>{
+              return e.fullname == this.params
+             })
+             if (this.user === undefined ){
+              this.val = 'd-none'
+                this.route.navigate(['/**'])
+                return
+             }
+              this.name = this.user.fullname;
+              sessionStorage.setItem('params',this.user.email)
+             })
+      } catch (error) {
+        console.log(error);
+        this.route.navigate(['/**'])
       }
+    }
+  }
+  
     ngOnDestroy() {
       this.destroy.unsubscribe()
     }

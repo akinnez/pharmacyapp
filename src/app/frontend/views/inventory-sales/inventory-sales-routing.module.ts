@@ -8,15 +8,19 @@ const routes: Routes = [
   component: InventorySalesComponent,
   children:[
     {
+      path: '', loadChildren:()=>import ('../inventory-start/inventory-start.module').then(n=>n.InventoryStartModule)
+    },
+    {
       path:'inventory',
       loadChildren:()=>import ('../inventory/inventory.module').then(n=>n.InventoryModule)
     },
+    { path: 'transactions', loadChildren: () => import('../transactions/transactions.module').then(m => m.TransactionsModule) },
     {
       path:'pending',
       loadChildren:()=>import ('../pending/pending.module').then(n=>n.PendingModule)
     },
   ]
-  }
+  },
 ];
 
 @NgModule({

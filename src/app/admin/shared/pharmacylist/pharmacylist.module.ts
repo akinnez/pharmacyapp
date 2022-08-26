@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { PharmacylistComponent } from './pharmacylist.component';
 import {MatDialogModule} from '@angular/material/dialog';
 import { MatIconModule } from '@angular/material/icon';
+import { MatPaginatorModule } from '@angular/material/paginator';
 
 
 
@@ -13,7 +14,8 @@ import { MatIconModule } from '@angular/material/icon';
   imports: [
     CommonModule,
     MatDialogModule,
-    MatIconModule
+    MatIconModule,
+    MatPaginatorModule
   ],
   exports:[PharmacylistComponent],
   
