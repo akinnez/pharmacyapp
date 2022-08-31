@@ -12,12 +12,12 @@ export class PharmacyeditComponent implements OnInit,OnDestroy {
   dataForm:any
   destroy:any
   form: FormGroup;
-  selectlist:string[] = ['Tablets','Expectorant','Soft Gel']
+  selectlist:string[] = ['Tablets','Expectorant','Soft Gel','Suspension','Ointments','Lotion','Paste',"Spray","Inhalants","Others"]
   constructor(private fb: FormBuilder, private ps:PharmacyServiceService) {
     this.form = this.fb.group({
       name: ['', Validators.required],
       companyName: ['', Validators.required],
-      itemCode: ['', [Validators.required]],
+      itemCode: ['', [Validators.required,Validators.maxLength(13)]],
       qtty: ['', [Validators.required]],
       price: ['', [Validators.required]],
       size:['',Validators.required],

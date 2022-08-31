@@ -10,14 +10,14 @@ import { PharmacyServiceService } from 'src/app/admin/services/pharmacyService/p
 export class AddDrugsFormComponent implements OnInit,OnDestroy {
   form:FormGroup;
   destroy:any
-  selectlist:string[] = ['Tablets','Expectorant','Soft Gel']
+  selectlist:string[] = ['Tablets','Expectorant','Soft Gel','Suspension','Ointments','Lotion','Paste',"Spray","Inhalants","Others"]
   constructor(private fb:FormBuilder, private pharmacyService: PharmacyServiceService) { 
     this.form = this.fb.group({
       name: ['', Validators.required],
       companyName: ['', Validators.required],
-      itemCode: ['', [Validators.required,Validators.pattern('^([0-9]{13})$')]],
-      qtty: ['', [Validators.required,Validators.pattern('^([0-9])$')]],
-      price: ['', [Validators.required,Validators.pattern('^([0-9])$')]],
+      itemCode: ['', [Validators.required,Validators.maxLength(13)]],
+      qtty: ['', [Validators.required]],
+      price: ['', [Validators.required]],
       size:['',Validators.required],
       forms:['',Validators.required],
       mfd: ['', Validators.required],
