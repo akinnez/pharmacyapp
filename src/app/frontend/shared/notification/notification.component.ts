@@ -38,17 +38,15 @@ export class NotificationComponent implements OnInit,OnDestroy {
     this.dialogRef.close()
   }
   print(){
-    console.log(this.data[0].transaction);
-    
-    //   this.block = 'd-none'
-    //   this.cashier =  this.datum[this.getIndex].fullname
-    // if(!this.datum[this.getIndex].transactions){this.get = {transactions: [this.data[0]]};this.patch()}
-    // else{
-    //   this.datum[this.getIndex].transactions.push(this.data[0]);
-    //   this.get = {transactions: this.datum[this.getIndex].transactions}
-    //   this.patch()
-    //   }
-      // setTimeout(()=>{print();location.reload()})
+      this.block = 'd-none'
+      this.cashier =  this.datum[this.getIndex].fullname
+    if(!this.datum[this.getIndex].transactions){this.get = {transactions: [this.data[0]]};this.patch()}
+    else{
+      this.datum[this.getIndex].transactions.push(this.data[0]);
+      this.get = {transactions: this.datum[this.getIndex].transactions}
+      this.patch()
+      }
+      setTimeout(()=>{print();location.reload()})
   }
 
 
