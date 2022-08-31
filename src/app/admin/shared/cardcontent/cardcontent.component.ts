@@ -14,7 +14,7 @@ import { Component, OnInit, Input } from '@angular/core';
                      {{value}}
                 </h1>
                 <h1 *ngIf="title =='Total Sales'" >
-                     {{value}}<span style="font-size:18px">NGN</span>
+                     {{value | currency:'NGN':'&#8358;':'1.2-2'}}
                 </h1>
             </div>
         </div>
