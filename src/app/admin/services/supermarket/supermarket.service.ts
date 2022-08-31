@@ -7,10 +7,15 @@ import { IProductlist } from '../../interface/admin.interface';
   providedIn: 'root'
 })
 export class SupermarketService {
-superlist:IProductlist[] = []
   constructor(private api:ApiService) { }
 
   getSuper(){
     return this.api.get(this.api.url + 'supermarket')
+  }
+  postGoods(data:object){
+    return this.api.post(this.api.url + 'supermarket',data)
+  }
+  delete(i:number){
+    return this.api.delete(this.api.url + 'supermarket' + `/${i}`,)
   }
 }

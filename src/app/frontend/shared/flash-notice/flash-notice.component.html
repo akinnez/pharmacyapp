@@ -1,0 +1,26 @@
+<div class="container-fluid" *ngIf="data.info ==='less than 15'">
+    <div>
+        <h1>Notice:</h1>
+        <span>The following drug(s) is/are about to run out of stocks:</span>
+    </div>
+    <div class="mt-3">
+       <span class="mt-3" *ngFor="let item of newData,let i=index">{{i+1}}. {{item.name}} &nbsp; &nbsp; {{item.qtty}} items left</span>
+    </div>
+    <div class="mt-3">
+        <app-button buttonSection ='frontend' text="OK" (mclick)="cancel()"></app-button>
+    </div>
+</div>
+
+<div class="container-fluid" *ngIf="data.info ==='out of stock'">
+    <div>
+        <h1>Notice:</h1>
+        <span>The following drug(s) is/are out of stocks:</span>
+    </div>
+    <div class="mt-3">
+       <span class="mt-3" *ngFor="let item of newData,let i=index">{{i+1}}. {{item.name}} &nbsp; &nbsp; {{item.qtty}} items left</span>
+    </div>
+    <div class="mt-3">
+        <app-button buttonSection ='frontend' text="OK" (mclick)="cancel()"></app-button>
+    </div>
+</div>
+

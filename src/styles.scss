@@ -12,7 +12,7 @@ font-family: 'Ubuntu', sans-serif;
 scroll-behavior: smooth !important;
   }
 
-input{
+input,select{
     border: 2.75px solid $text-color !important;
     color: $text-color !important;
 }

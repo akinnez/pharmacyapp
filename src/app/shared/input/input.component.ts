@@ -20,9 +20,10 @@ export class InputComponent implements OnInit,ControlValueAccessor {
  // passing props
  @Input() inputType:string = '';
  @Input() label:string = '';
+ @Input() getvalue:string = '';
  @Input() type:string = '';
  @Input() mclass:string = '';
- @Input() selectlist = [];
+ @Input() selectlist:string[] = [];
 
 
 constructor() { }

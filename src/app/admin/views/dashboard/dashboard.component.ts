@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { UserService } from '../../services/userService/user.service';
 
 interface IList{
   title:string,
@@ -13,12 +14,17 @@ interface IList{
 export class DashboardComponent implements OnInit {
 dashList:IList[] = [
   {title:'Total Users', value: 0},
-  {title:'Online Users', value:1234567},
-  {title:'Total Sales', value: 123456783456},
+  {title:'Online Users', value:0},
+  {title:'Total Sales', value: 0},
 ]
-  constructor() { }
+  constructor(public us:UserService) { }
 
   ngOnInit(): void {
+    this.us.getData().subscribe(
+      res=>{
+        this.dashList[0].value = res.length
+      }
+    )
     for (let index = 0; index < this.dashList.length; index++) {
       const element = this.dashList[index];
       

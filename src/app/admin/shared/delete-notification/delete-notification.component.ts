@@ -20,25 +20,18 @@ export class DeleteNotificationComponent implements OnInit {
     this.dialogRef.close();
   }
   delete(){
-    // this.dialogRef.close();
-    // console.log(this.data.id);
-    // this.userdata.users.splice(this.data.id,1) 
-    this.userdata.getData().subscribe(
-      res => {
-        console.log(res[this.data.id].id)
-      this.userdata.deleteUser(res[this.data.id].id).subscribe(
-      res => {
-        console.log(res)
-        this.dialogRef.close();
-        setTimeout(()=>location.reload(),1000)
-      },
-      err => console.log(err)
-    )
-      },
-      err => console.log(err)
-      
-    )
-      
-    
+    try {
+      this.userdata.getData().subscribe(
+        res => {
+        try {
+          this.userdata.deleteUser(res[this.data.id].id).subscribe(
+            res => {
+              console.log(res)
+              this.dialogRef.close();
+              setTimeout(()=>location.reload(),1000)
+            })
+        } catch (error) {console.log(error);}
+    })
+    } catch (error) {console.log(error);}     
   }
 }

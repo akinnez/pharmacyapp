@@ -12,7 +12,7 @@ export class PharmacylistComponent implements OnInit,OnDestroy {
   cond:boolean = false
   condition:boolean = true;
   destroy:any;
-  medlist:any;
+  medlist:any[]=[];
   startIndex:any;
   endIndex:any;
   pageSlice:any;
@@ -33,6 +33,20 @@ export class PharmacylistComponent implements OnInit,OnDestroy {
    
   }
 
+  delete(i:number){
+    try {
+      this.medicinelist.getDrugs().subscribe(
+        res => {
+        try {
+          this.medicinelist.delete(res[i].id).subscribe(
+            res => {
+              console.log(res);
+              setTimeout(()=>location.reload(),1000)
+            })
+        } catch (error) {console.log(error);}
+    })
+    } catch (error) {console.log(error);}
+  }
 
   checkActivities(){
     if(this.medlist.length == 0){
@@ -45,9 +59,10 @@ export class PharmacylistComponent implements OnInit,OnDestroy {
     const dialogConfig = new MatDialogConfig();
     dialogConfig.autoFocus = true
     dialogConfig.disableClose = true
-    dialogConfig.data = this.medicinelist.medlist[index]
-     this.dialog.open(EditPharmacyComponent, dialogConfig);
-      console.log(index);
+    // data = this.medlist[index]
+     this.dialog.open(EditPharmacyComponent,{
+      data: {index}
+     });
   }
   onPageChange(event:any){
       this.startIndex = event.pageIndex * event.pageSize;

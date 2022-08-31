@@ -7,7 +7,7 @@ div.rounded-circle{
 mat-drawer {
   background-color: $text-color !important;
 }
-input:focus{
+input:focus,select:focus{
   box-shadow: none !important;
 }
 
@@ -25,7 +25,7 @@ button.admin:hover{
   border: 2.75px solid $text-color !important;
   color: $text-color !important;
 }
-label.admin,h1.admin,h6.admin,span.admin{
+label.admin,h1.admin,h6.admin,span.admin,small{
   color: $text-color !important;
 }
 

@@ -1,15 +1,15 @@
 <div class="container d-flex justify-content-center align-items-center" style="height: 100%">
     <div class="card border-0">       
-        <!-- <mat-progress-bar mode="indeterminate" class="{{ progressbar }}"></mat-progress-bar> -->
         <div class="container">
-             <form [formGroup]="form" (submit)="navigate()">
+             <form [formGroup]="form" (submit)="navigate($event)">
                  <div class="my-5">
                      <div class="text-center mt-4">
                          <h1 class="admin">Create A User</h1>
                          <h6 class="my-3 admin">New User? Create a User</h6>
                      </div>
                      <div class="form-group mt-4" *ngFor="let item of formList">
-                             <app-input inputType='input' label='{{item.label}}' mclass="admin" formControlName='{{item.form}}' type='{{item.type}}'></app-input>
+                             <app-input inputType='input' label='{{item.label}}' mclass="admin" formControlName='{{item.form}}' type='{{item.type}}' getvalue="{{item.accept}}"></app-input>
+                             <small>{{item.text}}</small>
                        </div>
                        <div class="my-4">
                         <app-button buttonSection="admin" text='Create' mclass="text-center"></app-button>

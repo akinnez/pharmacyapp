@@ -41,7 +41,7 @@ navigate(){
       alert('Incorrect username or password')
       return this.progress(false,'d-none')
     }
-    else this.route.navigate(['/admin/dashboard'])
+    else{sessionStorage.setItem('admin',this.user.username); this.route.navigate(['/admin/dashboard'])}
   }
  )
  this.progress(true,'d-block')

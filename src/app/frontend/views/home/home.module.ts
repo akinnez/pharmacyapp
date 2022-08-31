@@ -6,7 +6,6 @@ import { HomeComponent } from './home.component';
 import { NavbarModule } from '../../shared/navbar/navbar.module';
 import { FooterModule } from '../../shared/footer/footer.module';
 
-
 @NgModule({
   declarations: [
     HomeComponent
@@ -15,7 +14,7 @@ import { FooterModule } from '../../shared/footer/footer.module';
     CommonModule,
     HomeRoutingModule,
     NavbarModule,
-    FooterModule
+    FooterModule,
   ]
 })
 export class HomeModule { }

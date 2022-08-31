@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { Component, OnDestroy, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { PharmacyServiceService } from 'src/app/admin/services/pharmacyService/pharmacy-service.service';
 
 @Component({
@@ -7,27 +7,30 @@ import { PharmacyServiceService } from 'src/app/admin/services/pharmacyService/p
   templateUrl: './add-drugs-form.component.html',
   styleUrls: ['./add-drugs-form.component.scss']
 })
-export class AddDrugsFormComponent implements OnInit {
+export class AddDrugsFormComponent implements OnInit,OnDestroy {
   form:FormGroup;
+  destroy:any
+  selectlist:string[] = ['Tablets','Expectorant','Soft Gel']
   constructor(private fb:FormBuilder, private pharmacyService: PharmacyServiceService) { 
     this.form = this.fb.group({
-      name:[''],
-      companyName:[''],
-      itemCode:[''],
-      qtty:[0],
-      price:[0],
-      mfd:[''],
-      exp:[''],
+      name: ['', Validators.required],
+      companyName: ['', Validators.required],
+      itemCode: ['', [Validators.required,Validators.pattern('^([0-9]{13})$')]],
+      qtty: ['', [Validators.required,Validators.pattern('^([0-9])$')]],
+      price: ['', [Validators.required,Validators.pattern('^([0-9])$')]],
+      size:['',Validators.required],
+      forms:['',Validators.required],
+      mfd: ['', Validators.required],
+      exp: ['', Validators.required],
     });
 
 
   }
-
   ngOnInit(): void {
   }
 navigate(){
   try {
-    this.pharmacyService.postDrugs(this.form.value).subscribe(
+   this.destroy =  this.pharmacyService.postDrugs(this.form.value).subscribe(
       res =>{
         console.log(res);
       }
@@ -36,7 +39,9 @@ navigate(){
     console.log(error);
     
   }
-  
-console.log(this.form.value)
+  setTimeout(()=> location.reload())
+}
+ngOnDestroy(): void {
+  this.destroy.unsubscribe()
 }
 }

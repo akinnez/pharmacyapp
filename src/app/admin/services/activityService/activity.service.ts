@@ -5,9 +5,10 @@ import { IActivity, IUser } from '../../interface/admin.interface';
   providedIn: 'root'
 })
 export class ActivityService {
+  isLoggedIn = false;
   activityList: IActivity[] = [
     {
-      username: 'khj',
+    username: 'khj',
     name: 'mirian maryam',
     activity: "logged In",
     duration: 10,
@@ -16,4 +17,7 @@ export class ActivityService {
   ]
 
   constructor() {}
+  isAuthenticated(){
+    return this.isLoggedIn
+  }
 }

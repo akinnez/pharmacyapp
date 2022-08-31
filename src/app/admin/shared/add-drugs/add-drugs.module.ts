@@ -5,6 +5,7 @@ import { AddDrugsComponent } from './add-drugs.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MatTabsModule } from '@angular/material/tabs';
 import { BulkModule } from '../../views/form/bulk/bulk.module';
+import { InputModule } from 'src/app/shared/input/input.module';
 
 
 
@@ -14,7 +15,8 @@ import { BulkModule } from '../../views/form/bulk/bulk.module';
     CommonModule,
     ReactiveFormsModule,
     BulkModule,
-    MatTabsModule
+    MatTabsModule,
+    InputModule
   ]
 })
 export class AddDrugsModule { }

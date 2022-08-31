@@ -23,9 +23,11 @@ export class InventoryComponent implements OnInit,OnDestroy{
   newData:IProductlist[]=[];
   dataFilter:IProductlist[] = [];
   datFilter:any[] = [];
+  neww:any
+  move:number = 0
   sumTotal:number[] = [];
-  qtty:number = 1;
-  num:number = 0 | Number.NEGATIVE_INFINITY;
+  qtty:number = 0;
+  num:number = 0;
   productArr:IProductlist[] = []
 
   constructor(
@@ -53,10 +55,10 @@ export class InventoryComponent implements OnInit,OnDestroy{
       })
   
     }
-
       try {
       this.destroy = this.ps.getDrugs().subscribe(
           res=>{
+            this.neww = res
             res.forEach((e:any) => {
               e.category = 'pharmacy';
               this.productArr.push(e)
@@ -98,21 +100,46 @@ export class InventoryComponent implements OnInit,OnDestroy{
   }
 
   inc(i:number){
+    this.move++
     this.datas[i].qtty++;
+    
+    this.patchQtty(i,-1)
     this.sum(i);
     this.sumTotal[i] = this.datas[i].sum
     this.reduce()
+  }
+  patchQtty(i:number,qty:any):void{
+    try {
+      this.destroy = this.ps.getDrugs().subscribe(
+        res=>{
+          let data = {qtty:res[i].qtty + qty};
+          this.destroy = this.ps.patchData(res[i].id,data).subscribe(
+              res=>{console.log(res);
+                console.log(res);
+              }
+            )
+        }
+      )
+    } catch (error) {
+      console.log(error);
+    }
+    // this.destroy = this.ps.patchData(this.neww[i].id,data).subscribe(
+    //   res=>{console.log(res);
+    //   }
+    // )
   }
 
   dec(i:number){
     if (this.datas[i].qtty <= 1) return;
     this.datas[i].qtty--
+    this.move--
+    this.patchQtty(i,1)
     this.sum(i);
      this.sumTotal[i] = this.datas[i].sum
     this.reduce()
   }
   post(i:number){
-    this.datFilter[i].qtty = 1;
+    this.datFilter[i].qtty = 0 ;
     this.datas.push(this.datFilter[i]);
     this.datFilter.splice(i,1)
 }
@@ -176,6 +203,7 @@ del(i:number){
   this.datas.splice(i,1)
   this.sumTotal.splice(i,1)
   this.reduce()
+  this.patchQtty(i,this.move)
 }
 
   ngOnDestroy() {

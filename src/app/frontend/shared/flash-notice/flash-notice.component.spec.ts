@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { AddGoodsFormComponent } from './add-goods.component';
+import { FlashNoticeComponent } from './flash-notice.component';
 
-describe('AddGoodsFormComponent', () => {
-  let component: AddGoodsFormComponent;
-  let fixture: ComponentFixture<AddGoodsFormComponent>;
+describe('FlashNoticeComponent', () => {
+  let component: FlashNoticeComponent;
+  let fixture: ComponentFixture<FlashNoticeComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ AddGoodsFormComponent ]
+      declarations: [ FlashNoticeComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(AddGoodsFormComponent);
+    fixture = TestBed.createComponent(FlashNoticeComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

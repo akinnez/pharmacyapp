@@ -5,8 +5,8 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class ApiService {
-  // url:string = "http://localhost:3000/"
-  url:string = "https://backend-pharmatech.herokuapp.com/"
+  url:string = "http://localhost:3000/"
+  // url:string = "https://backend-pharmatech.herokuapp.com/"
 
   private showRoutes = 0;
   private get headers() {

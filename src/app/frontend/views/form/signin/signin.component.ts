@@ -43,7 +43,7 @@ navigate(){
         alert('Incorrect username or password')
         return this.progress(false,'d-none')
       }
-      else this.route.navigate([`user/${this.user.fullname}`])
+      else { sessionStorage.setItem('params',this.user.email),this.route.navigate([`user/${this.user.fullname}`])}
     }
    )
    this.progress(true,'d-block')

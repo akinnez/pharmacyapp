@@ -35,7 +35,6 @@ export class NavbarComponent implements OnInit,OnDestroy {
                 return
              }
               this.name = this.user.fullname;
-              sessionStorage.setItem('params',this.user.email)
              })
       } catch (error) {
         console.log(error);

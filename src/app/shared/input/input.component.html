@@ -3,10 +3,11 @@
         <label class="{{mclass}}">{{label}}</label>
     </div>
     <div>
-        <input type="{{type}}" class="{{mclass}} form-control"
+        <input type="{{type}}" class="{{mclass}} form-control" 
         [value]='value' 
         (input)= 'onChange($any($event.target).value)'
         (blur)='onTouched()'
+        accept="{{getvalue}}"
         required 
         >
     </div>
@@ -14,12 +15,12 @@
 
 <div *ngIf="inputType === 'select'">
     <div>
-        <label>{{label}}</label>
+        <label class="fw-light">{{label}}</label>
     </div>
-    <select class="form-control">
-        <option value="" *ngFor="let item of selectlist"
+    <select class="form-select {{mclass}}">
+        <option *ngFor="let item of selectlist"
         [value]='value' 
-        (input)= 'onChange($any($event.target).value)'
+        (change)= 'onChange($any($event.target).value)'
         (blur)='onTouched()'
         >{{item}}
     </option>

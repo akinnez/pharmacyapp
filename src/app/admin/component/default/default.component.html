@@ -4,7 +4,9 @@
       <sidebar (toggleSideBarForMe)="toggleSideBar()" ></sidebar>
     </mat-drawer>
     <mat-drawer-content>
-        <app-header (toggleSideBarForMe)="toggleSideBar()"></app-header>
+        <div style="position: sticky;top:0;">
+          <app-header (toggleSideBarForMe)="toggleSideBar()"></app-header>
+        </div>
         <div class="xxl">
           <div class="chk">
             <div class="container-fluid">

@@ -1,33 +1,61 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnDestroy, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { PharmacyServiceService } from 'src/app/admin/services/pharmacyService/pharmacy-service.service';
 
 @Component({
   selector: 'pharmacyedit',
   templateUrl: './pharmacyedit.component.html',
   styleUrls: ['./pharmacyedit.component.scss'],
 })
-export class PharmacyeditComponent implements OnInit {
+export class PharmacyeditComponent implements OnInit,OnDestroy {
   @Input() data: any;
-  imgPix:number = 50
+  dataForm:any
+  destroy:any
   form: FormGroup;
-  constructor(private fb: FormBuilder) {
+  selectlist:string[] = ['Tablets','Expectorant','Soft Gel']
+  constructor(private fb: FormBuilder, private ps:PharmacyServiceService) {
     this.form = this.fb.group({
-      src: ['', Validators.required],
       name: ['', Validators.required],
       companyName: ['', Validators.required],
-      itemCode: ['', [Validators.required,Validators.pattern('^([0-9])$')]],
-      qtty: ['', [Validators.required,Validators.pattern('^([0-9])$')]],
-      price: ['', [Validators.required,Validators.pattern('^([0-9])$')]],
+      itemCode: ['', [Validators.required]],
+      qtty: ['', [Validators.required]],
+      price: ['', [Validators.required]],
+      size:['',Validators.required],
+      forms:['',Validators.required],
       mfd: ['', Validators.required],
       exp: ['', Validators.required],
     });
   }
 
-  ngOnInit(): void {}
+  ngOnInit(): void { 
+   try {
+    this.destroy = this.ps.getDrugs().subscribe(
+      res=>{
+        this.dataForm = res[this.data.index];
+      }
+    )
+   } catch (error) {
+    console.log(error);
+   }
+  }
   navigate() {
     if (this.form.invalid) {
-      return;
+    return alert('Please fill out the all the fields appropriately')
     }
-    console.log(this.form.valid);
+    this.updateData()
+    setTimeout(()=>location.reload())
   }
+
+  updateData():void{
+    try {
+      this.destroy =   this.ps.patchData(this.dataForm.id,this.form.value).subscribe(
+        res =>{console.log(res);
+        })
+    } catch (error) {
+      console.log(error)
+    }
+  }
+ngOnDestroy(): void {
+ this.destroy.unsubscribe() 
+}
 }

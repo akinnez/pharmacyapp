@@ -1,27 +1,44 @@
-import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { Component, OnDestroy, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { SupermarketService } from 'src/app/admin/services/supermarket/supermarket.service';
 
 @Component({
   selector: 'add-goods-form',
   templateUrl: './add-goods.component.html',
   styleUrls: ['./add-goods.component.scss']
 })
-export class AddGoodsFormComponent implements OnInit {
+export class AddGoodsFormComponent implements OnInit,OnDestroy {
   form:FormGroup;
-  constructor(private fb:FormBuilder) { 
+  destroy:any;
+  constructor(private fb:FormBuilder, public ss: SupermarketService) { 
     this.form = this.fb.group({
-      name:[''],
-      companyName:[''],
-      itemCode:[''],
-      qtty:[0],
-      price:[0],
-      mfd:[''],
-      exp:[''],
+      name:['',Validators.required],
+      companyName:['',Validators.required],
+      itemCode:['',Validators.required],
+      qtty:[0, Validators.required],
+      price:[0,Validators.required],
+      size:['',Validators.required],
+      mfd:['',Validators.required],
+      exp:['', Validators.required],
     })
   }
 
+  ngOnInit(): void {}
+navigate(){
+    try {
+    this.destroy =  this.ss.postGoods(this.form.value).subscribe(
+        res=>{
+          console.log(res);
+        }
+      )
+    } catch (error) {
+      console.log(error);
+    }
+    setTimeout(()=> location.reload())
+}
 
-  ngOnInit(): void {
-  }
-navigate(){}
+ngOnDestroy(): void {
+  this.destroy.unsubscribe()
+}
+
 }

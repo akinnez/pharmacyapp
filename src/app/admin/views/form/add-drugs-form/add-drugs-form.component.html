@@ -27,6 +27,24 @@
         </div>
         <div class="mt-3">
             <div>
+                <label>Size</label>
+            </div>
+           <input type="text" class="admin form-control"  formControlName="size">
+        </div>
+        <div class="mt-3">
+            <div>
+                <label>Form</label>
+            </div>
+            <select class="form-select" formControlName="forms">
+                <option *ngFor="let item of selectlist"
+                value='{{item}}'
+                >{{item}}
+            </option>
+            </select>
+            
+        </div>
+        <div class="mt-3">
+            <div>
                 <label>Price</label>
             </div>
            <input type="number" class="admin form-control"  formControlName="price">

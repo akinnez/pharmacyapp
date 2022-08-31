@@ -1,5 +1,6 @@
 import { Component, Inject, OnDestroy, OnInit } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { PharmacyServiceService } from 'src/app/admin/services/pharmacyService/pharmacy-service.service';
 import { UserService } from 'src/app/admin/services/userService/user.service';
 
 @Component({
@@ -17,7 +18,8 @@ export class NotificationComponent implements OnInit,OnDestroy {
   constructor(
     @Inject(MAT_DIALOG_DATA) public data:any, 
     public dialogRef: MatDialogRef<NotificationComponent>,
-    public us: UserService
+    public us: UserService,
+    private ps:PharmacyServiceService
   ) { }
 
   ngOnInit(): void {    
@@ -36,15 +38,17 @@ export class NotificationComponent implements OnInit,OnDestroy {
     this.dialogRef.close()
   }
   print(){
-      this.block = 'd-none'
-      this.cashier =  this.datum[this.getIndex].fullname
-    if(!this.datum[this.getIndex].transactions){this.get = {transactions: [this.data[0]]};this.patch()}
-    else{
-      this.datum[this.getIndex].transactions.push(this.data[0]);
-      this.get = {transactions: this.datum[this.getIndex].transactions}
-      this.patch()
-      }
-      setTimeout(()=>{print();location.reload()})
+    console.log(this.data[0].transaction);
+    
+    //   this.block = 'd-none'
+    //   this.cashier =  this.datum[this.getIndex].fullname
+    // if(!this.datum[this.getIndex].transactions){this.get = {transactions: [this.data[0]]};this.patch()}
+    // else{
+    //   this.datum[this.getIndex].transactions.push(this.data[0]);
+    //   this.get = {transactions: this.datum[this.getIndex].transactions}
+    //   this.patch()
+    //   }
+      // setTimeout(()=>{print();location.reload()})
   }
 
 
@@ -58,6 +62,24 @@ export class NotificationComponent implements OnInit,OnDestroy {
           console.log(error);
     }
 }
+
+patchQtty(i:number,qtty:any):void{
+  try {
+    this.destroy = this.ps.getDrugs().subscribe(
+      res=>{
+        let data = res[i].qtty - qtty;
+        this.destroy = this.ps.patchData(res[i].id,data).subscribe(
+            res=>{console.log(res);
+              console.log(res);
+            }
+          )
+      }
+    )
+  } catch (error) {
+    console.log(error);
+  }
+}
+
 
 ngOnDestroy(): void {
   this.destroy.unsubscribe()

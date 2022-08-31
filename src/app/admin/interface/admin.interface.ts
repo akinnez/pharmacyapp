@@ -52,6 +52,8 @@ export interface IProductlist {
   companyName:string,
   itemCode:number,
   category?:string,
+  forms?:string,
+  size?:string,
   qtty: number,
   price: number,
   mfd:Date,

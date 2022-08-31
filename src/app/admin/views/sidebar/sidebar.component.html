@@ -1,12 +1,8 @@
 <mat-nav-list>
     <div class="profile-card">
       <div class="header">
-          
-       
-        <!-- <img src="../../../../assets/lawkonetlogo.jpeg" alt="" /> -->
       </div>
       <div class="mat-title d-flex justify-content-between">
-        <!-- <div (click)="sideBarToggle()">PHARMACYAPP</div> -->
         <div class="closebtn {{appy}}" >
           <button (click)="sideBarToggle()" class="admin text-white">&times;</button>
         </div>
@@ -20,5 +16,8 @@
             <span class="ps-3 text-white {{appy}} fw-bold" [style.letterSpacing.px]="val" >{{item.text}}</span>
           </small>
       </a>
+    </div>
+    <div>
+      <a href=""> <mat-icon>user_arrow</mat-icon></a>
     </div>
   </mat-nav-list>
