@@ -25,23 +25,23 @@ export class HomepageComponent implements OnInit,OnDestroy {
       this.ps.getDrugs().subscribe(
         res=>{
           this.lessthan = res.filter((e:any):any=>{
-            if (e.qtty <= 15) {
+            if (e.qtty > 0 && e.qtty <=15) {
               this.diff = "less than 15"
               console.log(this.diff)
               return e.qtty <= 15 
-            }
+            }else
             if(e.qtty == 0){
               this.diff = "out of stock"
               console.log(this.diff)
               return  e.qtty == 0
             }
           })
+          console.log(this.diff)
+          if(!this.lessthan)return
+          else this.openAlert(this.lessthan,this.diff)
         }
       )
-      ;
-      console.log(this.diff)
-      if(this.lessthan)return
-          else this.openAlert(this.lessthan,this.diff)
+     
     } catch (error) {
       
     }
