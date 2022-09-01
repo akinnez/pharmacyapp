@@ -4,7 +4,9 @@
         <span>The following drug(s) is/are about to run out of stocks:</span>
     </div>
     <div class="mt-3">
-       <span class="mt-3" *ngFor="let item of newData,let i=index">{{i+1}}. {{item.name}} &nbsp; &nbsp; {{item.qtty}} items left</span>
+        <div *ngFor="let item of newData,let i=index">
+            <span class="mt-3">{{i+1}}. {{item.name}} &nbsp; &nbsp; {{item.qtty}} items left</span><br>
+        </div>
     </div>
     <div class="mt-3">
         <app-button buttonSection ='frontend' text="OK" (mclick)="cancel()"></app-button>
@@ -17,7 +19,9 @@
         <span>The following drug(s) is/are out of stocks:</span>
     </div>
     <div class="mt-3">
-       <span class="mt-3" *ngFor="let item of newData,let i=index">{{i+1}}. {{item.name}} &nbsp; &nbsp; {{item.qtty}} items left</span>
+        <div *ngFor="let item of newData,let i=index">
+            <span class="mt-3">{{i+1}}. {{item.name}} &nbsp; &nbsp; {{item.qtty}} items left</span><br>
+        </div>
     </div>
     <div class="mt-3">
         <app-button buttonSection ='frontend' text="OK" (mclick)="cancel()"></app-button>
