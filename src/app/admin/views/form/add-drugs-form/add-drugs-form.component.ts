@@ -29,6 +29,7 @@ export class AddDrugsFormComponent implements OnInit,OnDestroy {
   ngOnInit(): void {
   }
 navigate(){
+  if(this.form.invalid) return alert('Please, fill out all the fields')
   try {
    this.destroy =  this.pharmacyService.postDrugs(this.form.value).subscribe(
       res =>{
