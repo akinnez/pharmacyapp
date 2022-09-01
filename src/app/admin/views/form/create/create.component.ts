@@ -15,7 +15,7 @@ export class CreateComponent implements OnInit {
     {label:'Email Address', form:'email', type:'email'},
     {label:'Phone Number', form:'phoneNumber', type:'number',text:'Enter your 11 digits number'},
     {label:'Age', form:'age', type:'number'},
-    {label:'Upload Image', form:'image', type:'file', accept:'image/*', text:"Max. of 1mb"},
+    {label:'Upload Image', form:'image', type:'file', accept:'image/*', text:"Max. of 300kb"},
     {label:'Username', form:'username', type:'text', text:'Min. of 4 character'},
     {label:'Password', form:'password', type:'password', text:'Min. of 4 character'},
   ]
@@ -62,7 +62,7 @@ export class CreateComponent implements OnInit {
         console.log(err);
     }
    }else{
-    alert('Image file must not be more than 1mb')
+    alert('Image file must not be more than 300kb')
     return
    }      
   //  try {
