@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
+import { MatDialogRef } from '@angular/material/dialog';
 import { UserService } from 'src/app/admin/services/userService/user.service';
+import {AddUserComponent} from '../../../shared/add-user/add-user.component'
 
 @Component({
   selector: 'app-create',
@@ -20,7 +22,7 @@ export class CreateComponent implements OnInit {
   progressbar:string = 'd-none'
   check:any;
   cond:boolean = false
-  constructor(private fb:FormBuilder, public user: UserService) { }
+  constructor(private fb:FormBuilder, public user: UserService,public dialogRef: MatDialogRef<AddUserComponent>) { }
   form = this.fb.group({
     fullname:['',Validators.required],
     email:['',Validators.email],
@@ -43,14 +45,15 @@ export class CreateComponent implements OnInit {
     this.form.value.phoneNumber = event.target[2].valueAsNumber
     this.form.value.age = event.target[3].valueAsNumber
    const reader = new FileReader()
-   
-   if ((event.target[4].files[0].size / 1024 / 1024) <= 1) {
+   if ((event.target[4].files[0].size / 1024) <= 300) {
        reader.readAsDataURL(event.target[4].files[0])
        reader.onload = async()=>{
         this.form.value.image = reader.result
         try {
           this.user.postData(this.form.value).subscribe(
-           res => console.log(res))
+           res =>{ console.log(res);
+            setTimeout(()=> location.reload())
+          })
         } catch (error) {
           console.log(error)
         }
@@ -62,7 +65,13 @@ export class CreateComponent implements OnInit {
     alert('Image file must not be more than 1mb')
     return
    }      
-   
-   setTimeout(()=> location.reload())
+  //  try {
+  //   this.user.postData(this.form.value).subscribe(
+  //    res => console.log(res))
+  //    this.dialogRef.close()
+  // } catch (error) {
+  //   console.log(error)
+  // }
+  //  
     }
 }

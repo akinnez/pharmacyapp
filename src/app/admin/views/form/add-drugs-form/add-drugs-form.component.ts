@@ -33,13 +33,14 @@ navigate(){
    this.destroy =  this.pharmacyService.postDrugs(this.form.value).subscribe(
       res =>{
         console.log(res);
+        setTimeout(()=> location.reload())
       }
     )
   } catch (error) {
     console.log(error);
     
   }
-  setTimeout(()=> location.reload())
+  
 }
 ngOnDestroy(): void {
   this.destroy.unsubscribe()
