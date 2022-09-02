@@ -12,7 +12,7 @@ import { FlashNoticeComponent } from '../../shared/flash-notice/flash-notice.com
 })
 export class HomepageComponent implements OnInit,OnDestroy {
   params:any;
-  private diff:string =''
+  public diff:string =''
   lessthan:any
   user:any
   value:any
@@ -70,7 +70,11 @@ try {
     worker.onmessage().subscribe((data) => {
         console.log('Calculation done: ', new Date() + ' ' , data.data);
       // this.value = data.data.primeNumbers;
-   if(!data.data.returnValue)return
+      
+   if(data.data.returnValue.g.length == 0){
+    worker.terminate();
+    return
+  }
   else this.openAlert(data.data.returnValue.g,data.data.returnValue.d)
       worker.terminate();
     });

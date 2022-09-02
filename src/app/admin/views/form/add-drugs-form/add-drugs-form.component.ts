@@ -44,6 +44,6 @@ navigate(){
   
 }
 ngOnDestroy(): void {
-  this.destroy.unsubscribe()
+  // this.destroy.unsubscribe()
 }
 }
