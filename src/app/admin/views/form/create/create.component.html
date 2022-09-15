@@ -4,8 +4,8 @@
              <form [formGroup]="form" (submit)="navigate($event)">
                  <div class="my-5">
                      <div class="text-center mt-4">
-                         <h1 class="admin">Create A User</h1>
-                         <h6 class="my-3 admin">New User? Create a User</h6>
+                         <h1 class="admin">Create A Sales Representative</h1>
+                         <h6 class="my-3 admin">New Sales Representative? Create a Sales Representative</h6>
                      </div>
                      <div class="form-group mt-4" *ngFor="let item of formList">
                              <app-input inputType='input' label='{{item.label}}' mclass="admin" formControlName='{{item.form}}' type='{{item.type}}' getvalue="{{item.accept}}"></app-input>
